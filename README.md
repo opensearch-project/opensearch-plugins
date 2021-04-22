@@ -14,7 +14,7 @@ This repository contains all the things you ever wanted to know about OpenSearch
 Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581), plugins may require building all their dependencies and publishing them to Maven local.
 
 #### Publish OpenSearch to Maven Local
-Use the `1.0.0-alpha1` tag to have a stable version [1.0.0-alpha1 Tag](https://github.com/opensearch-project/OpenSearch/releases/tag/1.0.0-alpha1) 
+Use the `1.0.0-alpha1` tag to have a stable version [1.0.0-alpha1 Tag](https://github.com/opensearch-project/OpenSearch/releases/tag/1.0.0-alpha1). 
 
 This will publish artifacts which are part of release version `1.0.0-alpha1`.
 This will support running integration tests. Please note that the limitation for integration tests is that it is only supported for builds on linux platform.
