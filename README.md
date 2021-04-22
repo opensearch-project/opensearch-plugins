@@ -14,12 +14,15 @@ This repository contains all the things you ever wanted to know about OpenSearch
 Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581), plugins may require building all their dependencies and publishing them to Maven local.
 
 #### Publish OpenSearch to Maven Local
+Use the `1.0.0-alpha1` tag to have a stable version [1.0.0-alpha1 Tag](https://github.com/opensearch-project/OpenSearch/releases/tag/1.0.0-alpha1) 
 
+This will publish artifacts which are part of release version `1.0.0-alpha1`.
 ```
-~/OpenSearch (main)> ./gradlew publishToMavenLocal
+~/OpenSearch (main)> git checkout 1.0.0-alpha1 -b alpha1-release
+~/OpenSearch (main)> ./gradlew publishToMavenLocal -Dbuild.version_qualifier=alpha1 -Dbuild.snapshot=false
 ```
 
-On Unix, the local Maven repository is the `~/.m2` folder. For example, the above command produces `~/.m2/repository/org/opensearch/opensearch/1.0.0-SNAPSHOT/opensearch-1.0.0-SNAPSHOT.jar`.
+On Unix, the local Maven repository is the `~/.m2` folder. For example, the above command produces `~/.m2/repository/org/opensearch/opensearch/1.0.0-alpha1/opensearch-1.0.0-alpha1.jar`.
 
 #### Use OpenSearch from Maven Local in Plugins
 
