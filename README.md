@@ -2,6 +2,7 @@
   - [Building with OpenSearch](#building-with-opensearch)
     - [Publish OpenSearch to Maven Local](#publish-opensearch-to-maven-local)
     - [Use OpenSearch from Maven Local in Plugins](#use-opensearch-from-maven-local-in-plugins)
+  - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
 - [Contrbuting](#contrbuting)
 - [License](#license)
 
@@ -38,7 +39,10 @@ The following trivial build script changes were made to successfully run `./grad
 
 We plan to remove the need for this work-around via [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581).
 
-## Contrbuting
+## Upgrading Plugins to work with OpenSearch
+To upgrade your existing plugins to work with OpenSearch, see [Upgrading Guide](./UPGRADING.md)
+
+## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
