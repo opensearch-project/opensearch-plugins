@@ -32,9 +32,9 @@ Your plugin may have more dependencies than just OpenSearch. For example, [anoma
 
 The following trivial build script changes were made to successfully run `./gradlew publishToMavenLocal` in each of these.
 
-* [common-utils#8](https://github.com/opensearch-project/common-utils/pull/8)
-* [job-scheduler#8](https://github.com/opensearch-project/job-scheduler/pull/8)
-* [anomaly-detection#13](https://github.com/opensearch-project/anomaly-detection/pull/13)
+* [common-utils#9](https://github.com/opensearch-project/common-utils/pull/9)
+* [job-scheduler#11](https://github.com/opensearch-project/job-scheduler/pull/11)
+* [anomaly-detection#18](https://github.com/opensearch-project/anomaly-detection/pull/18)
 
 We plan to remove the need for this work-around via [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581).
 
