@@ -3,6 +3,7 @@
         - [Publish OpenSearch to Maven Local](#publish-opensearch-to-maven-local)
         - [Use OpenSearch from Maven Local in Plugins](#use-opensearch-from-maven-local-in-plugins)
     - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
+    - [Installing Plugins in OpenSearch](#installing-plugins-in-opensearch)
     - [Plugin Release Notes](#plugin-release-notes)
 - [Contributing](#contributing)
 - [License](#license)
