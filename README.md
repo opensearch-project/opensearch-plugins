@@ -44,6 +44,14 @@ We plan to remove the need for this work-around via [OpenSearch#581](https://git
 
 To upgrade your existing plugins to work with OpenSearch, see [UPGRADING](./UPGRADING.md).
 
+### Installing Plugins in OpenSearch
+
+Assemble OpenSearch for your operating system using [Building OpenSearch package](https://github.com/opensearch-project/OpenSearch/blob/main/TESTING.asciidoc#creating-packages).
+
+Install your plugin using opensearch-plugin script `./bin/opensearch-plugin install file:///<opensearch-plugin>.zip`
+
+_Example_: `./bin/opensearch-plugin install file:///opensearch-anomaly-detection-1.0.0.0-beta1.zip`
+
 ### Plugin Release Notes
 
 Plugins generally use a standard format for release notes, see [RELEASE_NOTES](./RELEASE_NOTES.md).
