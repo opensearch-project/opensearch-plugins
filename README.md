@@ -89,7 +89,7 @@ _Example_: For Linux platform.
 ~/OpenSearch-Dashboards (main)> git checkout 1.0.0-beta1
 ~/OpenSearch-Dashboards (main)> yarn build --release --version-qualifier beta1
 ~/OpenSearch-Dashboards (main)> cd build/opensearch-dashboards-1.0.0-beta1-linux-x64
-~/OpenSearch-Dashboards (main)> ./bin/opensearch-dashboards
+~/OpenSearch-Dashboards/build/opensearch-dashboards-1.0.0-beta1-linux-x64 (main)> ./bin/opensearch-dashboards
 ```
 
 Checkout, boostrap and run OpenSearch Dashboards with the plugin.
