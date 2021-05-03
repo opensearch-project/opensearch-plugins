@@ -51,7 +51,7 @@ To upgrade your existing plugins to work with OpenSearch, see [UPGRADING](./UPGR
 
 Assemble, extract and run OpenSearch `1.0.0-beta1` using [Building OpenSearch package](https://github.com/opensearch-project/OpenSearch/blob/main/TESTING.asciidoc#creating-packages).  
 
-_Example_: For Linux platform
+_Example_: For Linux platform.
 
 ```
 ~/ > git clone https://github.com/opensearch-project/OpenSearch.git
@@ -82,7 +82,7 @@ Install the plugins in order if they are dependent on other plugins.
 #### OpenSearch Dashboards Plugins
 Build and run OpenSearch Dashboards `1.0.0-beta1`. For setting up `yarn` and `nvm` follow instructions [Getting Started](https://github.com/opensearch-project/OpenSearch-Dashboards#getting-started).
 
-_Example_: For Linux platform
+_Example_: For Linux platform.
 
 ```
 ~/ > git clone https://github.com/opensearch-project/OpenSearch-Dashboards.git
@@ -92,7 +92,7 @@ _Example_: For Linux platform
 ~/OpenSearch-Dashboards (main)> ./bin/opensearch-dashboards
 ```
 
-Checkout, boostrap and run OpenSearch Dashboards with the plugin
+Checkout, boostrap and run OpenSearch Dashboards with the plugin.
 
 _Example_: Install Anomaly Detection Dashboards.
 
