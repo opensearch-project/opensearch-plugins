@@ -2,6 +2,13 @@
 
 These are all the steps to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, including building, and passing all tests.
 
+- [OpenSearch Plugins](#opensearch-plugins)
+   - [Building](#building)
+   - [Naming Conventions](#naming-conventions)
+- [OpenSearch Dashboard Plugins](#opensearch-dashboard-plugins)
+   - [Building](#building)
+   - [Naming Conventions](#naming-conventions)
+
 ### OpenSearch Plugins
 
 #### Building
