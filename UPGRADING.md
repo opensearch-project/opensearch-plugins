@@ -6,7 +6,7 @@
             - [Naming Conventions](#naming-convention)
     - [Backwards Compatibility](#backwards-compatibility-support)
         - [OpenSearch Plugins](#opensearch-plugins)
-            - [Rest APIs]()
+            - [Rest APIs](#rest-apis)
 
 ## Upgrading Plugins to OpenSearch/OpenSearch Dashboards
 
@@ -126,6 +126,8 @@ public List<RestHandler.Route> routes() {
         );
 }
 ```
+
+_Example_: Pull Request from Anomaly Detection https://github.com/opensearch-project/anomaly-detection/pull/35
 
 
 
