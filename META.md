@@ -1,7 +1,7 @@
 - [Managing OpenSearch Plugins](#managing-opensearch-plugins)
   - [Install GH](#install-gh)
   - [Install Meta](#install-meta)
-  - [Check Out Plugins](#check-out-plugins)
+  - [Check Out All Plugins](#check-out-all-plugins)
   - [Get Repo Info](#get-repo-info)
   - [Add a New Plugin](#add-a-new-plugin)
   - [Create or Update Labels in All Plugin Repos](#create-or-update-labels-in-all-plugin-repos)
@@ -10,7 +10,7 @@
 
 ## Managing OpenSearch Plugins
 
-We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch and OpenSearch Dashoards plugins as a set. There are two sets: [OpenSearch plugins](plugins/.meta) and [OpenSearch Dashboards Plugins](dashboards-plugins/.meta). If you need a meta project for all components included in OpenSearch, see [opensearch-build/meta](https://github.com/opensearch-project/opensearch-build/meta).
+We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch and OpenSearch Dashoards plugins as a set. There are three sets: [all plugins](.meta), [OpenSearch Plugins](plugins/.meta) and [OpenSearch Dashboards Plugins](dashboards-plugins/.meta). If you need a meta project for all components included in OpenSearch, see [opensearch-build/meta](https://github.com/opensearch-project/opensearch-build/meta).
 
 ### Install GH
 
@@ -19,13 +19,14 @@ Install and configure GitHub CLI from [cli.github.com/manual/installation](https
 ### Install Meta
 
 ```sh
-npm install -g meta
+npm install
 ```
 
-### Check Out Plugins
+See [package.json](package.json) for all dependencies being installed.
+
+### Check Out All Plugins
 
 ```sh
-cd plugins
 meta git update
 ```
 
@@ -34,14 +35,13 @@ Use `meta git pull` to subsequently pull the latest revisions.
 ### Get Repo Info
 
 ```sh
-plugins> meta gh issue list
+meta gh issue list
 ```
 
 ### Add a New Plugin
 
 ```sh
-cd plugins
-meta project import new-plugin git@github.com:opensearch-project/new-plugin.git
+meta project import plugin git@github.com:opensearch-project/plugin.git
 ```
 
 ### Create or Update Labels in All Plugin Repos
