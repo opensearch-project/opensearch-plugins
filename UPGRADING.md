@@ -125,9 +125,7 @@ See below for Kibana-related naming conventions.
     }   
    ```
 
-7. Document your newly renamed settings.
-
-   TODO
+7. Document your newly renamed settings. For example, [documentation-website/.../alerting/settings.md](https://github.com/opensearch-project/documentation-website/blob/main/docs/alerting/settings.md). Many settings and names were bulk-changed in the docs, so this is a good time to ensure that the documentation is accurate.
 
 See [job-scheduler#20](https://github.com/opensearch-project/job-scheduler/pull/20) for an example.
 
