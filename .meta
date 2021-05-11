@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "job-scheduler": "git@github.com:opensearch-project/job-scheduler.git",
+    "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection.git"
+  }
+}
