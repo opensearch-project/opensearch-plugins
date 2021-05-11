@@ -11,6 +11,7 @@ Use the `1.0.0-beta1` tag to have a stable version [1.0.0-beta1 Tag](https://git
 
 This will publish artifacts which are part of release version `1.0.0-beta1`.
 This will support running integration tests. Please note that the limitation for integration tests is that it is only supported for builds on linux platform.
+(A _temporary_ workaround for this limitation is to update the `testClusters.integTest.testDistribution` param value in the plugins' `build.gradle` to be equal to `INTEG_TEST` rather than `ARCHIVE`). 
 
 ```
 ~/OpenSearch (main)> git checkout 1.0.0-beta1 -b beta1-release
