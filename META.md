@@ -23,7 +23,17 @@ See [package.json](package.json) for all dependencies being installed.
 
 ### Check Out All Plugins
 
+OpenSearch plugins:
+
 ```sh
+cd plugins
+meta git update
+```
+
+OpenSearch Dashboards plugins:
+
+```sh
+cd dashboards-plugins
 meta git update
 ```
 
@@ -32,13 +42,14 @@ Use `meta git pull` to subsequently pull the latest revisions.
 ### Get Repo Info
 
 ```sh
-meta gh issue list
+plugins> meta gh issue list
 ```
 
 ### Add a New Plugin
 
 ```sh
-meta project import plugin git@github.com:opensearch-project/plugin.git
+cd plugins
+meta project import new-plugin git@github.com:opensearch-project/new-plugin.git
 ```
 
 ### Create an Issue in All Plugins

@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "alerting": "git@github.com:opensearch-project/alerting-dashboards-plugin.git",
+    "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
+    "gantt-chart": "git@github.com:opensearch-project/dashboards-visualizations.git",
+    "index-management": "git@github.com:opensearch-project/index-management-dashboards-plugin.git",
+    "notebooks": "git@github.com:opensearch-project/dashboards-notebooks.git",
+    "query-workbench": "git@github.com:opensearch-project/sql.git",
+    "reports": "git@github.com:opensearch-project/dashboards-reports.git",
+    "security": "git@github.com:opensearch-project/security-dashboards-plugin.git",
+    "trace-analytics": "git@github.com:opensearch-project/trace-analytics.git"
+  }
+}
