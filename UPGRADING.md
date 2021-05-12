@@ -216,7 +216,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
    ```
 6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
 
-_Example_: Pull Request from Anomaly Detection https://github.com/opensearch-project/anomaly-detection/pull/35
+See [anomaly-detection#35](https://github.com/opensearch-project/anomaly-detection/pull/35) for an example.
 
 ### OpenSearch Dashboard Plugins
 
