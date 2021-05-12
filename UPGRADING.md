@@ -5,7 +5,9 @@ These are all the steps to upgrade plugins to work with OpenSearch and OpenSearc
 - [OpenSearch Plugins](#opensearch-plugins)
    - [Building](#building)
    - [Naming Conventions](#naming-conventions)
-   - [Settings Backwards Compatibility](#settings-backwards-compatibility)
+   - [Backwards Compatibility support](#backwards-compatibility-support)
+    - [Settings Backwards Compatibility](#settings-backwards-compatibility)
+    - [RestAPIs Backwards Compatibility](#rest-apis-backward-compatibility)
 - [OpenSearch Dashboard Plugins](#opensearch-dashboard-plugins)
    - [Building](#building)
    - [Naming Conventions](#naming-conventions)
@@ -75,7 +77,6 @@ There are a bunch of items to think about and support backwards compatibility.
                "opendistro.jobscheduler.request_timeout",
                TimeValue.timeValueSeconds(10),
                Setting.Property.NodeScope, Setting.Property.Dynamic, Setting.Property.Deprecated);
-
    }
    ```
 
@@ -105,7 +106,6 @@ There are a bunch of items to think about and support backwards compatibility.
             "opensearch.jobscheduler.request_timeout",
             LegacyOpenDistroJobSchedulerSettings.REQUEST_TIMEOUT,
             Setting.Property.NodeScope, Setting.Property.Dynamic);
-
    }
    ```
 
@@ -157,7 +157,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
     public static final String LEGACY_OPENDISTRO_AD_BASE_URI = LEGACY_AD_BASE + "/detectors";
     public static final String AD_BASE_URI = "/_plugins/_anomaly_detection";
     public static final String AD_BASE_DETECTORS_URI = AD_BASE_URI + "/detectors";
-    
+
     @Override
     public List<ReplacedRoute> replacedRoutes() {
         return ImmutableList
@@ -171,7 +171,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
                 )
             );
     }
-    ```
+   ```
 5. Add new tests to cover both old and new APIs.
     ```java
     public void testBackwardCompatibilityWithOpenDistro() throws IOException {
@@ -213,7 +213,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
             );
         assertEquals("Delete anomaly detector failed", RestStatus.OK, restStatus(response));
    }
-    ```
+   ```
 6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
 
 _Example_: Pull Request from Anomaly Detection https://github.com/opensearch-project/anomaly-detection/pull/35
@@ -244,6 +244,3 @@ _Example_: Pull Request from Anomaly Detection https://github.com/opensearch-pro
 | `KIB`    | `OSD`                   |
 
 See [anomaly-detection-dashboards-plugin#1](https://github.com/opensearch-project/anomaly-detection-dashboards-plugin/pull/1) for an example.
-
-
-
