@@ -1,4 +1,5 @@
 - [OpenSearch Plugins](#opensearch-plugins)
+    - [Naming Conventions](#naming-conventions)
     - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
     - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
     - [Installing Plugins](#installing-plugins)
@@ -9,6 +10,10 @@
 ## OpenSearch Plugins
 
 This repository contains all the things you ever wanted to know about OpenSearch plugins.
+
+### Naming Conventions
+
+See [CONVENTIONS](CONVENTIONS.md).
 
 ### Building Plugins with OpenSearch
 
