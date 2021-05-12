@@ -1,6 +1,15 @@
 {
   "projects": {
     "job-scheduler": "git@github.com:opensearch-project/job-scheduler.git",
-    "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection.git"
+    "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection.git",
+    "alerting": "git@github.com:opensearch-project/alerting.git",
+    "asynchronous-search": "git@github.com:opensearch-project/asynchronous-search.git",
+    "index-management": "git@github.com:opensearch-project/index-management.git",
+    "k-nn": "git@github.com:opensearch-project/k-nn.git",
+    "notebooks": "git@github.com:opensearch-project/dashboards-notebooks",
+    "performance-analyzer": "git@github.com:opensearch-project/performance-analyzer.git",
+    "reports-scheduler": "git@github.com:opensearch-project/dashboards-reports.git",
+    "security": "git@github.com:opensearch-project/security.git",
+    "sql": "git@github.com:opensearch-project/sql.git"
   }
 }

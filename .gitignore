@@ -1,3 +1,14 @@
 /job-scheduler/
 /anomaly-detection/
-node_modules
+/alerting/
+/anomaly-detection/
+/asynchronous-search/
+/index-management/
+/job-scheduler/
+/k-nn/
+/notebooks/
+/performance-analyzer/
+/reports-scheduler/
+/security/
+/sql/
+/node_modules/
