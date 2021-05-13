@@ -1,13 +1,19 @@
+<!-- TOC -->
+
+- [Managing OpenSearch Plugins](#managing-opensearch-plugins)
+    - [Install GH](#install-gh)
+    - [Install Meta](#install-meta)
+    - [Check Out Plugins](#check-out-plugins)
+    - [Get Repo Info](#get-repo-info)
+    - [Add a New Plugin](#add-a-new-plugin)
+    - [Create or Update Labels in All Plugin Repos](#create-or-update-labels-in-all-plugin-repos)
+    - [Create an Issue in All Plugin Repos](#create-an-issue-in-all-plugin-repos)
+
+<!-- /TOC -->
+
 ## Managing OpenSearch Plugins
 
 We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch plugins as a set.
-
-- [Install GH](#install-gh)
-- [Install Meta](#install-meta)
-- [Check Out All Plugins](#check-out-all-plugins)
-- [Get Repo Info](#get-repo-info)
-- [Add a New Plugin](#add-a-new-plugin)
-- [Create an Issue in All Plugins](#create-an-issue-in-all-plugins)
 
 ### Install GH
 
@@ -19,19 +25,10 @@ Install and configure GitHub CLI from [cli.github.com/manual/installation](https
 npm install -g meta
 ```
 
-### Check Out All Plugins
-
-OpenSearch plugins:
+### Check Out Plugins
 
 ```sh
 cd plugins
-meta git update
-```
-
-OpenSearch Dashboards plugins:
-
-```sh
-cd dashboards-plugins
 meta git update
 ```
 
@@ -50,10 +47,18 @@ cd plugins
 meta project import new-plugin git@github.com:opensearch-project/new-plugin.git
 ```
 
-### Create an Issue in All Plugins
+### Create or Update Labels in All Plugin Repos
 
-Create a file for the issue body, e.g. `backwards-compat/issue.md`.
+Install [ghi](https://github.com/stephencelis/ghi), e.g. `brew install ghi`.
 
 ```
-meta exec "gh issue create --label backwards-compatibility --title 'Ensure backwards compatibility with ODFE' --body-file ../backwards-compat/issue.md"
+meta exec "ghi label 'backwards-compatibility' -c '#773AA8'"
+```
+
+### Create an Issue in All Plugin Repos
+
+Create a file for the issue body, e.g. `issue.md`.
+
+```
+meta exec "gh issue create --label backwards-compatibility --title 'Ensure backwards compatibility with ODFE' --body-file ../issue.md"
 ```
