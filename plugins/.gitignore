@@ -1,0 +1,14 @@
+/alerting/
+/anomaly-detection/
+/asynchronous-search/
+/dashboards-notebooks/
+/dashboards-reports/
+/dashboards-visualizations/
+/index-management/
+/job-scheduler/
+/k-nn/
+/performance-analyzer/
+/security/
+/security-dashboards-plugin/
+/sql/
+/trace-analytics/

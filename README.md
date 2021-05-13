@@ -1,5 +1,6 @@
 - [OpenSearch Plugins](#opensearch-plugins)
     - [Naming Conventions](#naming-conventions)
+    - [Managing OpenSearch Plugins](#managing-opensearch-plugins)
     - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
     - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
     - [Installing Plugins](#installing-plugins)
@@ -14,6 +15,9 @@ This repository contains all the things you ever wanted to know about OpenSearch
 ### Naming Conventions
 
 See [CONVENTIONS](CONVENTIONS.md).
+### Managing OpenSearch Plugins
+
+We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch plugins as a set. See [META](META.md) for more information.
 
 ### Building Plugins with OpenSearch
 
