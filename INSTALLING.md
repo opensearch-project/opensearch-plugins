@@ -20,7 +20,7 @@ _Example_: For Linux platform.
 
 Checkout, build and install the plugin.
 
-_Example_: Install Anomaly Detection(Job Scheduler plugin which is a dependency).
+_Example_: Install Anomaly Detection and Job Scheduler plugins.
 
 ```
 ~/OpenSearch (main)> git clone https://github.com/opensearch-project/job-scheduler.git
