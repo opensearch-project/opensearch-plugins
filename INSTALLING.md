@@ -1,11 +1,12 @@
 ## Installing Plugins
 
-- [Installing OpenSearch Plugins](#installing-opensearch-plugins)
-- [Installing OpenSearch Dashboards Plugins](#installing-opensearch-dashboards-plugins)
+- [Installing Plugins](#installing-plugins)
+  - [Installing OpenSearch Plugins](#installing-opensearch-plugins)
+  - [Installing OpenSearch Dashboards Plugins](#installing-opensearch-dashboards-plugins)
 
 ### Installing OpenSearch Plugins
 
-Assemble, extract and run OpenSearch `1.0.0-beta1` using [Building OpenSearch package](https://github.com/opensearch-project/OpenSearch/blob/main/TESTING.asciidoc#creating-packages).  
+Assemble, extract and run OpenSearch `1.0.0-beta1` using [Building OpenSearch package](https://github.com/opensearch-project/OpenSearch/blob/main/TESTING.md#creating-packages).  
 
 _Example_: For Linux platform.
 
@@ -21,6 +22,8 @@ _Example_: For Linux platform.
 Checkout, build and install the plugin.
 
 _Example_: Install Anomaly Detection(Job Scheduler plugin which is a dependency).
+
+To build the plugins with OpenSearch, plugins may require building all their dependencies and publishing them to Maven local along with OpenSearch using [Building Plugins with OpenSearch](https://github.com/opensearch-project/opensearch-plugins/blob/main/BUILDING.md).
 
 ```
 ~/OpenSearch (main)> git clone https://github.com/opensearch-project/job-scheduler.git
