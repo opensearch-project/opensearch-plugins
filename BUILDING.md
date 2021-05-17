@@ -1,9 +1,10 @@
-## Building Plugins with OpenSeearch
+## Building Plugins with OpenSearch
 
 Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581), plugins may require building all their dependencies and publishing them to Maven local.
 
-- [Publish OpenSearch to Maven Local](#publish-opensearch-to-maven-local)
-- [Use OpenSearch from Maven Local in Plugins](#use-opensearch-from-maven-local-in-plugins)
+- [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
+  - [Publish OpenSearch to Maven Local](#publish-opensearch-to-maven-local)
+  - [Use OpenSearch from Maven Local in Plugins](#use-opensearch-from-maven-local-in-plugins)
 
 ### Publish OpenSearch to Maven Local
 
