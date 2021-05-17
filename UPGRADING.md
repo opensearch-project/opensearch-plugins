@@ -11,7 +11,7 @@ These are all the steps to upgrade plugins to work with OpenSearch and OpenSearc
 - [OpenSearch Dashboard Plugins](#opensearch-dashboard-plugins)
    - [Building](#building-1)
    - [Naming Conventions](#naming-conventions-1)
-   - [API compatibility with OpenSearch Plugins](#api-compatibility-with-opensearch-plugins)
+   - [REST API compatibility with OpenSearch Plugins](#rest-api-compatibility-with-opensearch-plugins)
 
 ### OpenSearch Plugins
 
@@ -246,7 +246,7 @@ See [anomaly-detection#35](https://github.com/opensearch-project/anomaly-detecti
 
 See [anomaly-detection-dashboards-plugin#1](https://github.com/opensearch-project/anomaly-detection-dashboards-plugin/pull/1) for an example.
 
-#### API Compatibility with OpenSearch Plugins
+#### REST API Compatibility with OpenSearch Plugins
 
 If your OpenSearch Dashboards plugin is communicating with a corresponding OpenSearch plugin, you will want to update any migrated API calls (see API changes [here](#rest-apis-backward-compatibility)) to be compatible with the new endpoints.
 
