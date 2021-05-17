@@ -1,17 +1,25 @@
+<!-- TOC -->
+
+- [Upgrading Plugins to OpenSearch and OpenSearch Dashboards](#upgrading-plugins-to-opensearch-and-opensearch-dashboards)
+    - [OpenSearch Plugins](#opensearch-plugins)
+        - [Building](#building)
+        - [Naming Conventions](#naming-conventions)
+        - [Backwards Compatibility](#backwards-compatibility)
+            - [Settings](#settings)
+            - [Rest APIs](#rest-apis)
+            - [Indices](#indices)
+    - [OpenSearch Dashboards Plugins](#opensearch-dashboards-plugins)
+        - [Building](#building)
+        - [Naming Conventions](#naming-conventions)
+        - [REST API Compatibility with OpenSearch Plugins](#rest-api-compatibility-with-opensearch-plugins)
+
+<!-- /TOC -->
+
 ## Upgrading Plugins to OpenSearch and OpenSearch Dashboards
 
-These are all the steps to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, including building, and passing all tests.
+In [introducing OpenSearch](https://aws.amazon.com/blogs/opensource/introducing-opensearch/) we promised that _"The Amazon OpenSearch Service APIs will be backward compatible with the existing service APIs to eliminate any need for customers to update their current client code or applications. Additionally, just as we did for previous versions of Elasticsearch, we will provide a seamless upgrade path from existing Elasticsearch 6.x and 7.x managed clusters to OpenSearch."_ We [asked customers](https://discuss.opendistrocommunity.dev/t/upgrade-path-to-opensearch/5788/10) about what that would look like and concluded that the north star should be drop-in replacement without downtime. This means that one should be able to install OpenSearch 1.0, join an ODFE 1.13/ES 7.10.x cluster, and it should just work. The umbrella for this work is OpenSearch#671 and opensearch-plugins#12 for plugins.
 
-- [OpenSearch Plugins](#opensearch-plugins)
-   - [Building](#building)
-   - [Naming Conventions](#naming-conventions)
-   - [Backwards Compatibility support](#backwards-compatibility-support)
-    - [Settings Backwards Compatibility](#settings-backwards-compatibility)
-    - [RestAPIs Backwards Compatibility](#rest-apis-backward-compatibility)
-- [OpenSearch Dashboard Plugins](#opensearch-dashboard-plugins)
-   - [Building](#building-1)
-   - [Naming Conventions](#naming-conventions-1)
-   - [REST API compatibility with OpenSearch Plugins](#rest-api-compatibility-with-opensearch-plugins)
+These are all the steps to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, with backwards compatibility, including building, and passing all tests.
 
 ### OpenSearch Plugins
 
@@ -27,7 +35,7 @@ See [anomaly-detection#1](https://github.com/opensearch-project/anomaly-detectio
 
 #### Naming Conventions
 
-The following naming convention has been adopted for Elasticsearch.
+The following naming convention has been adopted for renaming from Elasticsearch.
 
 | Before          | After        |
 |-----------------|--------------|
@@ -38,23 +46,13 @@ The following naming convention has been adopted for Elasticsearch.
 | `ES`            | `OpenSearch` |
 | `ELASTICSEARCH` | `OPENSEARCH` |
 
+You will need to rename namespaces, classes, methods, variables and identifiers.
+
 See below for Kibana-related naming conventions.
 
-#### Backwards Compatibility support
+#### Backwards Compatibility
 
-There are a bunch of items to think about and support backwards compatibility.
-
-* Renaming, and Backwards Compatibility for Settings
-* Renaming, and Backwards Compatibility for Rest APIs
-* Renaming Namespaces (e.g. `com.amazon.opendistroforelasticsearch` to `org.opensearch`) - TODO
-* Renaming Classes, Methods, Variables - TODO
-* Renaming Remaining Identifiers (e.g. `Opendistro` to `OpenSearch`) - TODO
-* Renaming, and Backwards Compatibility for Indices - TODO
-* Run in a backwards compatible way on top of OpenSearch 1.0 that has joined an ES 7.10.x cluster - TODO
-* Run in a backwards compatible way on top of OpenSearch 1.0 that has joined an ODFE 1.13.x cluster - TODO
-* Drop in replacement for the Opendistro version 1.13 of the plugin - TODO
-
-##### Settings Backwards Compatibility
+##### Settings
 
 1. Assuming your settings live in a single class, make a copy of that class and prepend `LegacyOpenDistro` to the copy. Do not rename the settings here in the legacy class. For example:
 
@@ -104,13 +102,15 @@ There are a bunch of items to think about and support backwards compatibility.
    public class JobSchedulerSettings {
 
        public static final Setting<TimeValue> REQUEST_TIMEOUT = Setting.positiveTimeSetting(
-            "opensearch.jobscheduler.request_timeout",
+            "plugins.jobscheduler.request_timeout",
             LegacyOpenDistroJobSchedulerSettings.REQUEST_TIMEOUT,
             Setting.Property.NodeScope, Setting.Property.Dynamic);
    }
    ```
 
    Note that this setting does not have a default value, but defaults to falling back to `LegacyOpenDistroJobSchedulerSettings.REQUEST_TIMEOUT`.
+
+   Note that the naming convention for plugin settings has changed from `opendistro.` to `plugins.` If you have renamed any settings to `opensearch.`, please change them again to `plugins.`.
 
 5. Make sure you have implemented a listener to update the setting value. If a setting is set in `opensearch.yml`, you're all set. But if the setting is set via API, the node will start, settings will be read, defaults applied (fallback value will be used), and only afterwards fetched from the cluster and set on your node. Thus your setting will end up with the default value of the fallback.
 
@@ -124,7 +124,7 @@ There are a bunch of items to think about and support backwards compatibility.
       });
    ```
 
-   Note that only listener on new settings are required. Updates on an old setting will be synced to the corresponding new setting automatically until the new setting is changed individually.
+   Note that only listener on new settings are required. Updates on an old setting will be synced to the corresponding new setting automatically until the new setting is changed directly.
 
 6. Write tests.
 
@@ -146,7 +146,7 @@ There are a bunch of items to think about and support backwards compatibility.
 
 See [job-scheduler#20](https://github.com/opensearch-project/job-scheduler/pull/20) for an example.
 
-#### Rest APIs Backward Compatibility
+##### Rest APIs
 
 All APIs which have to be migrated can follow this design.
 From here on the doc will be focussed on an ODFE plugin as an example.
@@ -221,7 +221,11 @@ From here on the doc will be focussed on an ODFE plugin as an example.
 
 See [anomaly-detection#35](https://github.com/opensearch-project/anomaly-detection/pull/35) for an example.
 
-### OpenSearch Dashboard Plugins
+##### Indices
+
+Do not change index names at this time to preserve backwards compatibility.
+
+### OpenSearch Dashboards Plugins
 
 #### Building
 
