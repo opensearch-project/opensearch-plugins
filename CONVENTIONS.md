@@ -103,7 +103,8 @@ For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.co
 ### Settings
 
 - Settings do not have a prefix.
-- Avoid using `opensearch` in the setting name, e.g. `jobscheduler.request_timeout` and not `opensearch.jobscheduler.request_timeout`.
+- Use `plugins.` for plugin settings, e.g. `plugins.jobscheduler.request_timeout`.
+- Do not use `opensearch` in the setting name, e.g. `plugins.jobscheduler.request_timeout` and not `opensearch.jobscheduler.request_timeout`.
 
 ### APIs
 
