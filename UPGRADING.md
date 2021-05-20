@@ -124,6 +124,8 @@ There are a bunch of items to think about and support backwards compatibility.
       });
    ```
 
+   Note that only listener on new settings are required. Updates on an old setting will be synced to the corresponding new setting automatically until the new setting is changed individually.
+
 6. Write tests.
 
    ```java
