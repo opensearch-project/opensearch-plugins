@@ -1,6 +1,7 @@
 <!-- TOC -->
 
 - [Upgrading Plugins to OpenSearch and OpenSearch Dashboards](#upgrading-plugins-to-opensearch-and-opensearch-dashboards)
+    - [Upgrading to OpenSearch](#upgrading-to-opensearch)
     - [OpenSearch Plugins](#opensearch-plugins)
         - [Building](#building)
         - [Naming Conventions](#naming-conventions)
@@ -17,11 +18,17 @@
 
 ## Upgrading Plugins to OpenSearch and OpenSearch Dashboards
 
-In [introducing OpenSearch](https://aws.amazon.com/blogs/opensource/introducing-opensearch/) we promised that _"The Amazon OpenSearch Service APIs will be backward compatible with the existing service APIs to eliminate any need for customers to update their current client code or applications. Additionally, just as we did for previous versions of Elasticsearch, we will provide a seamless upgrade path from existing Elasticsearch 6.x and 7.x managed clusters to OpenSearch."_ We [asked customers](https://discuss.opendistrocommunity.dev/t/upgrade-path-to-opensearch/5788/10) about what that would look like and concluded that the north star should be drop-in replacement without downtime. This means that one should be able to install OpenSearch 1.0, join an ODFE 1.13/ES 7.10.x cluster, and it should just work. The umbrella for this work is OpenSearch#671 and opensearch-plugins#12 for plugins.
+In [introducing OpenSearch](https://aws.amazon.com/blogs/opensource/introducing-opensearch/) we promised that _"The Amazon OpenSearch Service APIs will be backward compatible with the existing service APIs to eliminate any need for customers to update their current client code or applications. Additionally, just as we did for previous versions of Elasticsearch, we will provide a seamless upgrade path from existing Elasticsearch 6.x and 7.x managed clusters to OpenSearch."_ We also [asked customers](https://discuss.opendistrocommunity.dev/t/upgrade-path-to-opensearch/5788/10) about what that would look like, and scoped what _upgrading_ and _backwards compatibility_ mean. 
 
-These are all the steps to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, with backwards compatibility, including building, and passing all tests.
+### Upgrading to OpenSearch
+
+> Upgrading your cluster from ElasticSearch to OpenSearch and OpenSearch Dashboards is just like upgrading your cluster between versions of ElasticSearch and Kibana. Specifically, OpenSearch supports rolling upgrades and restart upgrades from ElasticSearch 6.8.0 through ElasticSearch 7.10.2 and to OpenSearch 1.0. OpenSearch Dashboards supports restart upgrades from Kibana 6.8.0 through Kibana 7.10.2 and to OpenSearch Dashboards 1.0.
 
 ### OpenSearch Plugins
+
+When upgrading plugins, consider the above statement.
+
+The following steps are generally known as required to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, with backwards compatibility, including building, and passing all tests.
 
 #### Building
 
