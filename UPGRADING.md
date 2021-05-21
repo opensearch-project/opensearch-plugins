@@ -22,11 +22,17 @@ In [introducing OpenSearch](https://aws.amazon.com/blogs/opensource/introducing-
 
 ### Upgrading to OpenSearch
 
-> Upgrading your cluster from ElasticSearch to OpenSearch and OpenSearch Dashboards is just like upgrading your cluster between versions of ElasticSearch and Kibana. Specifically, OpenSearch supports rolling upgrades and restart upgrades from ElasticSearch 6.8.0 through ElasticSearch 7.10.2 and to OpenSearch 1.0. OpenSearch Dashboards supports restart upgrades from Kibana 6.8.0 through Kibana 7.10.2 and to OpenSearch Dashboards 1.0.
+OpenSearch and OpenSearch Dashboards 1.0 North Star is the following upgrade path.
+
+> Upgrading from Elasticsearch OSS and Kibana OSS or Open Distro for Elasticsearch (ODFE) to OpenSearch and OpenSearch Dashboards is just like upgrading between versions of Elasticsearch OSS and Kibana OSS. Specifically, OpenSearch supports rolling upgrades and restart upgrades from Elasticsearch OSS 6.8.0 through Elasticsearch OSS 7.10.2 to OpenSearch 1.0. OpenSearch Dashboards supports restart upgrades from Kibana OSS 6.8.0 through Kibana OSS 7.10.2 to OpenSearch Dashboards 1.0. All 1.x versions of ODFE similarly support upgrades to OpenSearch and OpenSearch Dashboards 1.0.
+
+When making changes, ensure that you are not breaking anything that prevents rolling upgrades to OpenSearch or restart upgrades to OpenSearch Dashboards. Do not do any refactoring or renaming that would risk breaking everything.
+
+You must make branding changes (e.g. text labels, icons).
+
+You do not need to rename any "magic words" (e.g. variable names, index names, parameters) that are required by the system to function in its ALv2 form.
 
 ### OpenSearch Plugins
-
-When upgrading plugins, consider the above statement.
 
 The following steps are generally known as required to upgrade plugins to work with OpenSearch and OpenSearch Dashboards 1.0.0, with backwards compatibility, including building, and passing all tests.
 
