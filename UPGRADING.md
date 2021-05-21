@@ -156,8 +156,8 @@ From here on the doc will be focussed on an ODFE plugin as an example.
 3. All new APIs will be implemented with `_plugins` as defined in the [Naming Conventions](./CONVENTIONS.md).
 4. The method `replacedRoutes()` is overriden and this should now have both `_opendistro` and `_plugins` APIs.
     ```java
-    public static final String LEGACY_AD_BASE = "/_opendistro/_anomaly_detection";
-    public static final String LEGACY_OPENDISTRO_AD_BASE_URI = LEGACY_AD_BASE + "/detectors";
+    public static final String LEGACY_OPENDISTRO_AD_BASE = "/_opendistro/_anomaly_detection";
+    public static final String LEGACY_OPENDISTRO_AD_BASE_URI = LEGACY_OPENDISTRO_AD_BASE + "/detectors";
     public static final String AD_BASE_URI = "/_plugins/_anomaly_detection";
     public static final String AD_BASE_DETECTORS_URI = AD_BASE_URI + "/detectors";
 
