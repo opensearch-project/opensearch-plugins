@@ -7,7 +7,8 @@
         - [Naming Conventions](#naming-conventions)
         - [Backwards Compatibility](#backwards-compatibility)
             - [Settings](#settings)
-            - [Rest APIs](#rest-apis)
+            - [Rest APIs on 9200](#rest-apis-on-9200-port)
+            - [Rest APIs on 9600 or other ports](#rest-apis-on-9600-or-other-ports)
             - [Indices](#indices)
     - [OpenSearch Dashboards Plugins](#opensearch-dashboards-plugins)
         - [Building](#building)
@@ -159,9 +160,9 @@ See below for Kibana-related naming conventions.
 
 See [job-scheduler#20](https://github.com/opensearch-project/job-scheduler/pull/20) for an example.
 
-##### Rest APIs
+##### Rest APIs on 9200 port
 
-All APIs which have to be migrated can follow this design.
+All APIs on 9200 which have to be migrated can follow this design.
 From here on the doc will be focussed on an ODFE plugin as an example.
 
 1. All plugins extend `BaseRestHandler` class to implement their own RestAPIs.
@@ -233,6 +234,37 @@ From here on the doc will be focussed on an ODFE plugin as an example.
 6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
 
 See [anomaly-detection#35](https://github.com/opensearch-project/anomaly-detection/pull/35) for an example.
+
+##### Rest APIs on 9600 or other ports
+
+All APIs on 9600 or other ports which have to be migrated can follow this design.
+From here on the doc will be focussed on an ODFE plugin as an example.
+
+1. All plugins uses `HttpServer` to create a server which handles HTTPS requests and is bound to an IP address and port number.
+2. All the existing APIs with `_opendistro` should be supported but for maintenance mode only.
+3. All new APIs will be implemented with `_plugins` as defined in the [Naming Conventions](./CONVENTIONS.md).
+4. The method `createContext` is used to create HttpContext's for both `_opendistro` and `_plugins` APIs.
+   ```java
+   public static final String QUERY_URL = "/_plugins/_performanceanalyzer/metrics";
+   public static final String LEGACY_OPENDISTRO_QUERY_URL =
+               "/_opendistro/_performanceanalyzer/metrics";
+   public static final String BATCH_METRICS_URL = "/_plugins/_performanceanalyzer/batch";
+   public static final String LEGACY_OPENDISTRO_BATCH_METRICS_URL =
+               "/_opendistro/_performanceanalyzer/batch";
+   QueryMetricsRequestHandler queryMetricsRequestHandler =
+                       new QueryMetricsRequestHandler(netClient, metricsRestUtil, appContext);
+   httpServer.createContext(QUERY_URL, queryMetricsRequestHandler);
+   httpServer.createContext(LEGACY_OPENDISTRO_QUERY_URL, queryMetricsRequestHandler);
+   
+   QueryBatchRequestHandler queryBatchRequestHandler =
+                       new QueryBatchRequestHandler(netClient, metricsRestUtil);
+   httpServer.createContext(BATCH_METRICS_URL, queryBatchRequestHandler);
+   httpServer.createContext(LEGACY_OPENDISTRO_BATCH_METRICS_URL, queryBatchRequestHandler);
+   ```    
+5. Add new tests to cover both old and new APIs.
+6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
+
+See [performance-analyzer#18](https://github.com/opensearch-project/performance-analyzer-rca/pull/18) for an example.
 
 ##### Indices
 
