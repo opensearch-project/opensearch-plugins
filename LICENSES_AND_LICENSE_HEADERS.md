@@ -1,4 +1,4 @@
-## LICENSES_AND_LICENSE_HEADERS
+## LICENSES AND LICENSE HEADERS
 
 OpenSearch-project uses Apache License v2 for all the projects.  
 Refer to [LICENSE](LICENSE)
