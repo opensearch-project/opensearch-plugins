@@ -3,7 +3,7 @@
 OpenSearch-project uses Apache License v2 for all the projects.  
 Refer to [LICENSE](LICENSE)
 
-All new files will use OpenSearch SPDX license on top of existing license if any.
+All files will use OpenSearch SPDX license on top of existing license if any.
 ```
 /*
  * SPDX-License-Identifier: Apache-2.0
