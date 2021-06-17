@@ -5,7 +5,7 @@
     - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
     - [Installing Plugins](#installing-plugins)
     - [Plugin Release Notes](#plugin-release-notes)
-    - [Licenses and License Headers ](#faq)
+    - [Headers](#headers)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -38,9 +38,9 @@ See [INSTALLING](INSTALLING.md) for details.
 
 Plugins generally use a standard format for release notes, see [RELEASE_NOTES](./RELEASE_NOTES.md).
 
-### Licenses and Licenses Headers
+### Headers
 
-See [LICENSES AND LICENSE HEADERS](LICENSES_AND_LICENSE_HEADERS.md) for details.
+See [HEADERS](HEADERS.md) for details of headers including licenses.
 
 ## Contributing
 
