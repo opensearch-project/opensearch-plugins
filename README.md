@@ -1,11 +1,12 @@
 - [OpenSearch Plugins](#opensearch-plugins)
-    - [Naming Conventions](#naming-conventions)
-    - [Managing OpenSearch Plugins](#managing-opensearch-plugins)
-    - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
-    - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
-    - [Installing Plugins](#installing-plugins)
-    - [Plugin Release Notes](#plugin-release-notes)
-    - [Headers](#headers)
+  - [Naming Conventions](#naming-conventions)
+  - [Managing OpenSearch Plugins](#managing-opensearch-plugins)
+  - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
+  - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
+  - [Installing Plugins](#installing-plugins)
+  - [Plugin Release Notes](#plugin-release-notes)
+  - [Headers](#headers)
+  - [Standards](#standards)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -41,6 +42,10 @@ Plugins generally use a standard format for release notes, see [RELEASE_NOTES](.
 ### Headers
 
 See [HEADERS](HEADERS.md) for details of headers including licenses.
+
+### Standards
+
+See [STANDARDS](STANDARDS.md) for information regarding plugin standards.
 
 ## Contributing
 
