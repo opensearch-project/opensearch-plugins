@@ -93,7 +93,8 @@ For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.co
 #### OpenSearch Dashboard Plugins
 
 - Always use kebab-case.
-- Include full plugin name, e.g. `plugins/notebooks-dashboards`.
+- Include full plugin name, e.g. `plugins/notebooks-dashboards`. The change to automatically convert folders to kebab-case is still pending, see [OpenSearch-Dashboards#322](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/322).
+
 ### Classes
 
 - Lowercase namespaces, e.g. `org.opensearch.jobscheduler`.
