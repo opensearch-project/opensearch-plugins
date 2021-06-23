@@ -81,20 +81,19 @@ For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.co
 
 #### OpenSearch Dashboards Plugins
 
-- Artifacts are of the `<package name>-<version>` format, e.g. `dashboards-notebooks-1.0.0.0-beta1.zip`.
+- Artifacts are of the `<package name>-<version>` format, e.g. `notebooks-dashboards-1.0.0.0-beta1.zip`.
 
 ### Folders
 
 #### OpenSearch Plugins
 
-- Always use snake-case.
+- Always use kebab-case.
 - Include full plugin name, e.g. `plugins/opensearch-knn`.
 
 #### OpenSearch Dashboard Plugins
 
-- Always use snake-case.
-- Include full plugin name, e.g. `plugins/dashboards-notebooks`. Currently broken, see [OpenSearch-Dashboards#322](https://github.com/opensearch-project/OpenSearch-Dashboards/issues/322).
-
+- Always use kebab-case.
+- Include full plugin name, e.g. `plugins/notebooks-dashboards`.
 ### Classes
 
 - Lowercase namespaces, e.g. `org.opensearch.jobscheduler`.
