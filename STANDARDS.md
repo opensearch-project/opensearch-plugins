@@ -17,8 +17,8 @@ See [lycheeverse/lychee-action](https://github.com/lycheeverse/lychee-action) fo
 
 ## CI Workflows
 
-CI Workflows should be setup to run unit and integration tests if any.  
-Workflows should run on main and release branches including pull requests.
+CI Workflows should be setup to run and verify plugin unit and integration tests.  
+Workflows should run on main and release branches including pull requests merging into them.
 
 _Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/main/.github/workflows/CI.yml). 
 
