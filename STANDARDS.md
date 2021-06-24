@@ -6,6 +6,7 @@ This document lists down the standards for OpenSearch plugins which can be used 
   - [Broken Links Checker](#broken-links-checker)
   - [Plugin Release Notes](#plugin-release-notes)
   - [License Headers](#license-headers)
+  - [Code Coverage Report](#code-coverage-report)
 
 ## Broken Links Checker
 
@@ -20,3 +21,7 @@ Release notes for plugins are located at [RELEASE_NOTES.md](RELEASE_NOTES.md).
 ## License Headers
 
 License Header details are located at [HEADERS.md](HEADERS.md).
+
+## Code Coverage Report
+
+Code coverage reporting details are located at [TESTING.md](TESTING.md).
