@@ -19,9 +19,9 @@ All the OpenSearch plugins are required to have the following items:
 See [CI Workflows](STANDARDS.md#ci-workflows) for example.
 
 #### A status badge in README file of the repository to show the code coverage.  ([example](https://github.com/opensearch-project/index-management#readme))
-Add the follwing line in the markdown file.
+Add the follwing line at the header of the README markdown file:
 ```
-[![codecov](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE)
+[![codecov](https://codecov.io/gh/opensearch-project/<repo_name>/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/<repo_name>)
 ```
 Link of the badge can also be accessed from the Repository's Settings page: 
 https://app.codecov.io/<code_provider>/<org_name>/<repo_name>/settings/badge
