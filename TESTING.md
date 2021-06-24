@@ -25,3 +25,9 @@ Add the follwing line at the header of the README markdown file:
 ```
 Link of the badge can also be accessed from the Repository's Settings page: 
 https://app.codecov.io/<code_provider>/<org_name>/<repo_name>/settings/badge
+
+#### Codecov integration in Pull Requests
+1. Add a `codecov.yml` file into the repository ([example](https://github.com/opensearch-project/k-NN/commit/f7d1985230ce851cb97a7e41d8bce32127a4f33b))
+2. Set the target code coverage properly in case it blocks your PR in Github checks.
+
+See Codecov docs to learn more about [codecov yaml file](https://docs.codecov.com/docs/codecov-yaml) and [common configurations](https://docs.codecov.com/docs/common-recipe-list).
