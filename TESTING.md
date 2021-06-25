@@ -14,17 +14,19 @@ All the OpenSearch plugins are required to have the following items:
 #### Code coverage report upload through CI workflow
 1. Generate code coverage report in `xml` format in a CI workflow of Github Actions
 2. Upload the report to Codecov by adding a step of [codecov-action](https://github.com/codecov/codecov-action) in the workflow.
-3. Set the workflow to be triggered by `push` and `pull request` on `main` and release branches.
+3. For private repositories, an upload token is needed, please visit the repository page of Codecov to get your token: https://codecov.io/gh/opensearch-project/REPO-NAME-HERE. Please use Github Secrets to store the token and not expose to the public.
+4. Set the workflow to be triggered by `push` and `pull request` on `main` and release branches.
+5. To see your code coverage results from Codecov, visiting https://codecov.io/gh/ucsb-cs156-f20/REPO-NAME-HERE after the CI workflow is triggered.
 
 See [CI Workflows](STANDARDS.md#ci-workflows) for example.
 
 #### A status badge in README file of the repository to show the code coverage.  ([example](https://github.com/opensearch-project/index-management#readme))
 Add the follwing line at the header of the README markdown file:
 ```
-[![codecov](https://codecov.io/gh/opensearch-project/<repo_name>/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/<repo_name>)
+[![codecov](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE)
 ```
-Link of the badge can also be accessed from the Repository's Settings page: 
-https://app.codecov.io/<code_provider>/<org_name>/<repo_name>/settings/badge
+Link of the badge can also be accessed from the repository's settings page of Codecov: 
+https://codecov.io/gh/opensearch-project/REPO-NAME-HERE/settings/badge
 
 #### Codecov integration in Pull Requests
 1. Add a `codecov.yml` file into the repository ([example](https://github.com/opensearch-project/k-NN/commit/f7d1985230ce851cb97a7e41d8bce32127a4f33b))
