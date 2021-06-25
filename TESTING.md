@@ -9,6 +9,8 @@
 ### Code Coverage Collecting
 Code coverage is a measurement of how many lines of code are executed under the test suites.
 
+
+
 ### Code Coverage Reporting
 OpenSearch plugins are using [Codecov](https://about.codecov.io/) for code coverage reporting and analysis. The dashboard can be seen [here](https://app.codecov.io/gh/opensearch-project/).
 
@@ -17,7 +19,7 @@ All the OpenSearch plugins are required to have the following items:
 #### Code coverage report upload through CI workflow
 1. Generate code coverage report in `xml` format in a CI workflow of Github Actions
 2. Upload the report to Codecov by adding a step of [codecov-action](https://github.com/codecov/codecov-action) in the workflow.
-3. For private repositories, an upload token is needed, please visit the repository page of Codecov to get your token: https://codecov.io/gh/opensearch-project/REPO-NAME-HERE. Please use Github Secrets to store the token and not expose to the public.
+3. For private repositories, an upload token is needed, visit the repository page of Codecov to get your token: https://codecov.io/gh/opensearch-project/REPO-NAME-HERE. Please use Github Secrets to store the token and not expose to the public.
 4. Set the workflow to be triggered by `push` and `pull request` on `main` and release branches.
 5. To see your code coverage results from Codecov, visiting https://codecov.io/gh/opensearch-project/REPO-NAME-HERE after the CI workflow is triggered.
 
