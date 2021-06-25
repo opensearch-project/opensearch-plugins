@@ -14,7 +14,7 @@ Code coverage is a measurement of how many lines of code are executed under the 
 ##### Gradle project
 1. Add [JaCoCo Gradle plugin](https://docs.gradle.org/current/userguide/jacoco_plugin.html) to `build.gradle` in your repository. [example](https://github.com/opensearch-project/sql/blob/opensearch-1.0.0.0-rc1/build.gradle#L48)
 2. Set Jacoco to export coverage report in `xml` format. [example](https://github.com/opensearch-project/sql/blob/opensearch-1.0.0.0-rc1/build.gradle#L101-L105)
-3. Call gradle task "jacocoTestReport" to generate report (`./gradlew jacocoTestReport`) after running your tests. (Or add a `dependsOn` to make "jacocoTestReport" task depends on your test tasks. [example](https://github.com/opensearch-project/index-management/blob/opensearch-1.0.0.0-beta1/build-tools/coverage.gradle))
+3. Call gradle task "jacocoTestReport" to generate report (`./gradlew jacocoTestReport`) after running your tests. (Or add a `dependsOn` to make "jacocoTestReport" task depending on your test tasks. [example](https://github.com/opensearch-project/index-management/blob/opensearch-1.0.0.0-beta1/build-tools/coverage.gradle))
 
 ##### Maven project
 Since OpenSearch uses Gradle as the build tool, we don't recommend using Maven.
@@ -39,7 +39,7 @@ All the OpenSearch plugins are required to have the following items:
 See [CI Workflows](STANDARDS.md#ci-workflows) for example.
 
 #### A status badge in README file of the repository to show the code coverage.  ([example](https://github.com/opensearch-project/index-management#readme))
-Add the follwing line at the header of the README markdown file:
+Add the following line at the header of the README markdown file:
 ```
 [![codecov](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE)
 ```
