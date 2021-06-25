@@ -36,6 +36,6 @@ Public documentation can be found at [docs-beta](https://docs-beta.opensearch.or
 
 Release notes for plugins can be found at [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
-## Code Coverage Report
+## Code Coverage
 
-Code coverage reporting can be found at [TESTING.md](TESTING.md).
+Code coverage reporting can be found at [TESTING.md](TESTING.md#code-coverage-reporting).
