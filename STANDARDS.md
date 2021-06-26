@@ -5,10 +5,10 @@ This document lists down the standards for OpenSearch plugins which can be used 
 - [Plugin Standards](#plugin-standards)
   - [Broken Links Checker](#broken-links-checker)
   - [CI Workflows](#ci-workflows)
+  - [Code Coverage Report](#code-coverage-report)
   - [License Headers](#license-headers)
   - [Public Documentation](#public-documentation)
   - [Release Notes](#release-notes)  
-  - [Code Coverage Report](#code-coverage-report)
 
 ## Broken Links Checker
 
@@ -23,6 +23,10 @@ Workflows should run on main and release branches including pull requests mergin
 
 _Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/main/.github/workflows/CI.yml). 
 
+## Code Coverage
+
+Code coverage reporting can be found at [TESTING.md](TESTING.md#code-coverage-reporting).
+
 ## License Headers
 
 License Header details can be found at [HEADERS.md](HEADERS.md).
@@ -35,7 +39,3 @@ Public documentation can be found at [docs-beta](https://docs-beta.opensearch.or
 ## Release Notes
 
 Release notes for plugins can be found at [RELEASE_NOTES.md](RELEASE_NOTES.md).
-
-## Code Coverage
-
-Code coverage reporting can be found at [TESTING.md](TESTING.md#code-coverage-reporting).
