@@ -1,7 +1,15 @@
 <!-- TOC -->
 - [Testing](#testing)
     - [Code Coverage Collecting](#code-coverage-collecting)
+        - [OpenSearch plugin](#opensearch-plugin)
+            - [Gradle project](#gradle-project)
+            - [Maven project](#maven-project)
+        - [OpenSearch Dashboards plugin](#opensearch-dashboards-plugin)
+        - [Limitation](#limitation)
     - [Code Coverage Reporting](#code-coverage-reporting)
+        - [Code coverage report upload through CI workflow](#code-coverage-report-upload-through-ci-workflow)
+        - [A status badge in README file to show the code coverage](#a-status-badge-in-readme-file-to-show-the-code-coverage)
+        - [Codecov integration in Pull Requests](#codecov-integration-in-pull-requests)
 <!-- TOC -->
 
 ## Testing
@@ -38,8 +46,10 @@ All the OpenSearch plugins are required to have the following items:
 
 See [CI Workflows](STANDARDS.md#ci-workflows) for example.
 
-#### A status badge in README file of the repository to show the code coverage.  ([example](https://github.com/opensearch-project/index-management#readme))
-Add the following line at the header of the README markdown file:
+#### A status badge in README file to show the code coverage
+See [here](https://github.com/opensearch-project/index-management/blob/main/README.md) for an example of the status badge.
+
+Add the following line at the header of the README markdown file of the repository:
 ```
 [![codecov](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE/branch/main/graph/badge.svg)](https://codecov.io/gh/opensearch-project/REPO-NAME-HERE)
 ```
