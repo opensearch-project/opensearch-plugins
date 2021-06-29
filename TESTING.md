@@ -1,15 +1,15 @@
 <!-- TOC -->
 - [Testing](#testing)
-    - [Code Coverage Collecting](#code-coverage-collecting)
-        - [OpenSearch plugin](#opensearch-plugin)
-            - [Gradle project](#gradle-project)
-            - [Maven project](#maven-project)
-        - [OpenSearch Dashboards plugin](#opensearch-dashboards-plugin)
-        - [Limitation](#limitation)
-    - [Code Coverage Reporting](#code-coverage-reporting)
-        - [Code coverage report upload through CI workflow](#code-coverage-report-upload-through-ci-workflow)
-        - [A status badge in README file to show the code coverage](#a-status-badge-in-readme-file-to-show-the-code-coverage)
-        - [Codecov integration in Pull Requests](#codecov-integration-in-pull-requests)
+  - [Code Coverage Collecting](#code-coverage-collecting)
+    - [OpenSearch plugin](#opensearch-plugin)
+      - [Gradle project](#gradle-project)
+      - [Maven project](#maven-project)
+      - [Limitation](#limitation)
+    - [OpenSearch Dashboards plugin](#opensearch-dashboards-plugin)
+  - [Code Coverage Reporting](#code-coverage-reporting)
+    - [Code coverage report upload through CI workflow](#code-coverage-report-upload-through-ci-workflow)
+    - [A status badge in README file to show the code coverage](#a-status-badge-in-readme-file-to-show-the-code-coverage)
+    - [Codecov integration in Pull Requests](#codecov-integration-in-pull-requests)
 <!-- TOC -->
 
 ## Testing
