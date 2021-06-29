@@ -23,7 +23,7 @@ Workflows should run on main and release branches including pull requests mergin
 
 _Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/main/.github/workflows/CI.yml). 
 
-## Code Coverage
+## Code Coverage Report
 
 Code coverage reporting can be found at [TESTING.md](TESTING.md#code-coverage-reporting).
 
