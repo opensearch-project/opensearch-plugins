@@ -39,7 +39,7 @@ OpenSearch Dashboards mainly uses [Jest](https://jestjs.io/) for unit testing, a
 To generate code coverage report under Jest framework, adding the flag `--coverage` in the command to run unit tests. See [here](https://github.com/opensearch-project/security-dashboards-plugin/blob/opensearch-1.0.0.0-beta1/.github/workflows/unit-test.yml#L67) for an example in the CI workflow.
 
 ### Code Coverage Reporting
-OpenSearch plugins are using [Codecov](https://about.codecov.io/) for code coverage reporting and analysis. The dashboard can be seen [here](https://app.codecov.io/gh/opensearch-project/).
+OpenSearch/Dashboards plugins are using [Codecov](https://about.codecov.io/) for code coverage reporting and analysis. The dashboard can be seen [here](https://app.codecov.io/gh/opensearch-project/).
 
 All the OpenSearch plugins are required to have the following items:
 
