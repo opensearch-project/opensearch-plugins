@@ -6,7 +6,7 @@ This document lists down the standards for OpenSearch plugins which can be used 
   - [Development Best Practices](#development-best-practices)
     - [Separation of Concerns](#separation-of-concerns)
     - [Use Namespacing](#use-namespacing)
-    - [Use Asyncronous Method Invocation](#use-asynchronous-method-invocation)
+    - [Use Asynchronous Method Invocation](#use-asynchronous-method-invocation)
     - [Validate User Input](#validate-user-input)
     - [API Versioning](#api-versioning)
     - [Accurate Logging](#accurate-logging)
