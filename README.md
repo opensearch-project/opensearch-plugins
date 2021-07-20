@@ -1,3 +1,5 @@
+<img src="https://opensearch.org/assets/img/opensearch-logo-themed.svg" height="64px">
+
 - [OpenSearch Plugins](#opensearch-plugins)
   - [Naming Conventions](#naming-conventions)
   - [Managing OpenSearch Plugins](#managing-opensearch-plugins)
