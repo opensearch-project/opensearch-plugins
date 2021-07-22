@@ -68,8 +68,8 @@ License Header details can be found at [HEADERS.md](HEADERS.md).
 
 ## Public Documentation
 
-For all new features and functionality changes for every release should update the documentation via [documentation-website](https://github.com/opensearch-project/documentation-website).  
-Public documentation can be found at [docs](https://opensearch.org/docs/).
+For all new features and functionality, changes for every release should update the documentation via [documentation-website](https://github.com/opensearch-project/documentation-website).  
+Public documentation can be found on [OpenSearch website](https://opensearch.org/docs).
 
 ## Release Notes
 
