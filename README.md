@@ -6,6 +6,7 @@
   - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
   - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
   - [Installing Plugins](#installing-plugins)
+  - [Developing Plugins for OpenSearch](#developing-plugins-for-opensearch)
   - [Plugin Release Notes](#plugin-release-notes)
   - [Headers](#headers)
   - [Standards](#standards)
@@ -27,7 +28,7 @@ We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch plugin
 
 Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581), plugins may require building all their dependencies and publishing them to Maven local.
 
-See [BUILDING](BUILDING.md) for details.
+See [BUILDING](BUILDING.md#building-plugins-with-opensearch) for details.
 
 ### Upgrading Plugins to work with OpenSearch
 
@@ -36,6 +37,10 @@ To upgrade your existing plugins to work with OpenSearch, see [UPGRADING](./UPGR
 ### Installing Plugins
 
 See [INSTALLING](INSTALLING.md) for details.
+
+### Developing Plugins for OpenSearch
+
+See [DEVELOPING_PLUGINS](BUILDING.md#developing-new-plugins-for-opensearch) for details.
 
 ### Plugin Release Notes
 
