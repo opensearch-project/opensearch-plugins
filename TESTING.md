@@ -10,6 +10,9 @@
     - [Code coverage report upload through CI workflow](#code-coverage-report-upload-through-ci-workflow)
     - [A status badge in README file to show the code coverage](#a-status-badge-in-readme-file-to-show-the-code-coverage)
     - [Codecov integration in Pull Requests](#codecov-integration-in-pull-requests)
+  - [Backwards Compatibility Testing](#backwards-compatibility-testing)
+    - [Types of BWC tests](#types-of-bwc-tests)
+    - [Hooking the BWC tests to CI](#hooking-the-bwc-tests-to-ci)
 <!-- TOC -->
 
 ## Testing
@@ -67,3 +70,31 @@ https://app.codecov.io/gh/opensearch-project/REPO-NAME-HERE/settings/badge
 2. Set the target code coverage properly in case it blocks your PR in Github checks.
 
 See Codecov docs to learn more about [codecov yaml file](https://docs.codecov.com/docs/codecov-yaml) and [common configurations](https://docs.codecov.com/docs/common-recipe-list).
+
+### Backwards Compatibility Testing
+
+The purpose of backwards compatibiity tests in plugins is to ensure that the plugin is safely upgraded when an OpenSearch node undergoes an upgrade. Backwards compatibility tests can be implemented in plugins by extending the OpenSearch bwc framework.
+
+See [OpenSearch#1051](https://github.com/opensearch-project/OpenSearch/pull/1051) for more information on the extended bwc framework.
+
+#### Types of BWC tests
+
+1. Mixed cluster test: This tests a cluster running with three nodes of a bwc OpenSearch and plugin version and upgrades a single node to the current version of OpenSearch and the plugin while the other two nodes are still on the previous version. This creates a mixed cluster. The test checks that the correct version of the plugin is installed in the upgraded node and the plugin functionalities work as expected after the upgrade.
+   Command: `./gradlew adBwcCluster#mixedClusterTask -Dtests.security.manager=false`
+2. Rolling upgrade tests: This tests a cluster running with three nodes of a bwc OpenSearch and plugin version and performs a node by node upgrade to the current version of OpenSearch and the plugin. The test checks that the correct version of the plugin is installed in each upgraded node and the plugin functionalities work as expected after each node upgrade.
+   Commmand: `./gradlew adBwcCluster#rollingUpgradeClusterTask -Dtests.security.manager=false`
+3. Full restart upgrade tests: This tests a cluster running with three nodes of a bwc OpenSearch and plugin version and performs a full cluster upgrade for all the nodes to the current version of OpenSearch and the plugin. The test checks that the correct version of the plugin is installed in all upgraded nodes and the plugin functionalities work as expected after the upgrade.
+   Command: `./gradlew adBwcCluster#fullRestartClusterTask -Dtests.security.manager=false`
+4. Command: `./gradlew bwcTestSuite -Dtests.security.manager=false` is used to run all the above bwc tests together.
+
+As mentioned above, the bwc tests are using the extended bwc framework from OpenSearch - the test cluster is contained within the `testclusters` module which is available as a plugin `opensearch.testclusters`. Each cluster is an instance of `OpenSearchCluster` containing a given number of `OpenSearchNode` nodes. The `OpenSearchNode` allows to install plugins to the node, start, stop, upgrade (along with plugin upgrade) and restart the node. The plugin bwc tests use these functionalities to spin up a test cluster with provided bwc versions and upgrade the nodes and plugins installed on the nodes to the current version using `upgradeNodeAndPluginToNextVersion` for a single node at a time and `upgradeAllNodesAndPluginsToNextVersion` for a full restart upgrade.
+
+See [anomaly-detection#158](https://github.com/opensearch-project/anomaly-detection/pull/158) and [anomaly-detection#185](https://github.com/opensearch-project/anomaly-detection/pull/185) for more information.
+
+Each plugin can test various functionalities in their bwc tests and add more scenarios if needed.
+
+#### Hooking the BWC tests to CI
+
+The bwc tests can be hooked to the CI workflow in the plugin to run it with each pull request and push. 
+
+See [anomaly-detection#181](https://github.com/opensearch-project/anomaly-detection/pull/181) for more information.
