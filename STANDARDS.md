@@ -15,7 +15,7 @@ This document lists down the standards for OpenSearch plugins which can be used 
   - [Code Coverage Report](#code-coverage-report)
   - [License Headers](#license-headers)
   - [Public Documentation](#public-documentation)
-  - [Release Notes](#release-notes)  
+  - [Release Notes](#release-notes)
 
 ## Development Best Practices
 
@@ -53,7 +53,7 @@ See [lycheeverse/lychee-action](https://github.com/lycheeverse/lychee-action) fo
 
 ## CI Workflows
 
-CI Workflows should be setup to run and verify plugin unit and integration tests.  
+CI Workflows should be setup to run and verify plugin unit, integration and backwards compatibility tests.
 Workflows should run on main and release branches including pull requests merging into them.
 
 _Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/main/.github/workflows/CI.yml). 
