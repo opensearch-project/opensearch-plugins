@@ -87,6 +87,8 @@ See [OpenSearch#1051](https://github.com/opensearch-project/OpenSearch/pull/1051
    Command: `./gradlew adBwcCluster#fullRestartClusterTask -Dtests.security.manager=false`
 4. Command: `./gradlew bwcTestSuite -Dtests.security.manager=false` is used to run all the above bwc tests together.
 
+The logs for the test runs can be found at `build/testclusters/{clustername}-{nodeid}/logs`.
+
 As mentioned above, the bwc tests are using the extended bwc framework from OpenSearch - the test cluster is contained within the `testclusters` module which is available as a plugin `opensearch.testclusters`. Each cluster is an instance of `OpenSearchCluster` containing a given number of `OpenSearchNode` nodes. The `OpenSearchNode` allows to install plugins to the node, start, stop, upgrade (along with plugin upgrade) and restart the node. The plugin bwc tests use these functionalities to spin up a test cluster with provided bwc versions and upgrade the nodes and plugins installed on the nodes to the current version using `upgradeNodeAndPluginToNextVersion` for a single node at a time and `upgradeAllNodesAndPluginsToNextVersion` for a full restart upgrade.
 
 See [anomaly-detection#158](https://github.com/opensearch-project/anomaly-detection/pull/158) and [anomaly-detection#185](https://github.com/opensearch-project/anomaly-detection/pull/185) for more information.
