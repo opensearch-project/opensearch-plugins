@@ -6,6 +6,7 @@
   - [Add a New Plugin](#add-a-new-plugin)
   - [Create or Update Labels in All Plugin Repos](#create-or-update-labels-in-all-plugin-repos)
   - [Create an Issue in All Plugin Repos](#create-an-issue-in-all-plugin-repos)
+  - [Open a Pull Request in Each Repo](#open-a-pull-request-in-each-repo)
 
 ## Managing OpenSearch Plugins
 
@@ -66,4 +67,31 @@ Create a file for the issue body, e.g. `issue.md`.
 
 ```
 meta exec "gh issue create --label backwards-compatibility --title 'Ensure backwards compatibility with ODFE' --body-file ../issue.md"
+```
+
+### Open a Pull Request in Each Repo
+
+In [opensearch-build#497](https://github.com/opensearch-project/opensearch-build/issues/497) we needed to remove `integtest.sh` from each repo.
+
+We'll be pushing to forks. Make sure to replace `username` with your GitHub username below and to fork all the repos first.
+
+```
+meta exec "gh repo fork"
+```
+
+Ensure that a remote is setup for each plugin pointing to our forks.
+
+```
+meta exec "git remote get-url origin | sed s/opensearch-project/username/g | xargs git remote add username"
+```
+
+Remove a file, e.g. `integtest.sh`, commit and push.
+
+```
+meta exec "git rm integtest.sh"
+meta exec "git add --all"
+meta exec "git checkout -b remove-integtest-sh"
+meta exec "git commit -s -m 'Removed integtest.sh.'"
+meta exec "git push username remove-integtest-sh"
+meta exec "gh pr create --title 'Removing default integtest.sh.' --body='Coming from https://github.com/opensearch-project/opensearch-build/issues/497, removing default integtest.sh.'"
 ```
