@@ -1,19 +1,19 @@
 <!-- TOC -->
 
 - [Upgrading Plugins to OpenSearch and OpenSearch Dashboards](#upgrading-plugins-to-opensearch-and-opensearch-dashboards)
-    - [Upgrading to OpenSearch](#upgrading-to-opensearch)
-    - [OpenSearch Plugins](#opensearch-plugins)
-        - [Building](#building)
-        - [Naming Conventions](#naming-conventions)
-        - [Backwards Compatibility](#backwards-compatibility)
-            - [Settings](#settings)
-            - [Rest APIs on 9200](#rest-apis-on-9200-port)
-            - [Rest APIs on 9600 or other ports](#rest-apis-on-9600-or-other-ports)
-            - [Indices](#indices)
-    - [OpenSearch Dashboards Plugins](#opensearch-dashboards-plugins)
-        - [Building](#building)
-        - [Naming Conventions](#naming-conventions)
-        - [REST API Compatibility with OpenSearch Plugins](#rest-api-compatibility-with-opensearch-plugins)
+  - [Upgrading to OpenSearch](#upgrading-to-opensearch)
+  - [OpenSearch Plugins](#opensearch-plugins)
+    - [Building](#building)
+    - [Naming Conventions](#naming-conventions)
+    - [Backwards Compatibility](#backwards-compatibility)
+      - [Settings](#settings)
+      - [Rest APIs on 9200 port](#rest-apis-on-9200-port)
+      - [Rest APIs on 9600 or other ports](#rest-apis-on-9600-or-other-ports)
+      - [Indices](#indices)
+  - [OpenSearch Dashboards Plugins](#opensearch-dashboards-plugins)
+    - [Building](#building-1)
+    - [Naming Conventions](#naming-conventions-1)
+    - [REST API Compatibility with OpenSearch Plugins](#rest-api-compatibility-with-opensearch-plugins)
 
 <!-- /TOC -->
 
@@ -279,7 +279,7 @@ Do not change index names at this time to preserve backwards compatibility.
 3. Create a `plugins` directory in the root of the project, if it doesn't exist.
 4. Run `yarn osd bootstrap` inside `opensearch-dashboards/plugins/opensearch-dashboards-plugin`.
 5. Build and test your plugin.
-6. Report all runtime failures of OpenSearch Dashboards to [OpenSearch Dashboards Issues](http://github.com/opensearch-project/opensearch-dashboards/issues) and runtime failures of plugins in plugin repositories.
+6. Report all runtime failures of OpenSearch Dashboards to [OpenSearch Dashboards Issues](https://github.com/opensearch-project/opensearch-dashboards/issues) and runtime failures of plugins in plugin repositories.
 
 #### Naming Conventions
 
