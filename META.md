@@ -69,6 +69,12 @@ Create a file for the issue body, e.g. `issue.md`.
 meta exec "gh issue create --label backwards-compatibility --title 'Ensure backwards compatibility with ODFE' --body-file ../issue.md"
 ```
 
+One of the common scenarios for creating issues in all plugin repos is creating a release issue that links back to a parent release issue in opensearch-build. 
+
+1. Locate the parent issue, e.g. [opensearch-build#567](https://github.com/opensearch-project/opensearch-build/issues/567) for version 1.2.
+2. Clone the last template in [templates/releases/](templates/releases), and update version numbers and links, e.g. [release-1.2.0.md](templates/releases/release-1.2.0.md).
+3. Run `meta exec "gh issue create --label release --title 'Release version 1.2' --body-file ../templates/releases/release-1.2.0.md"`.
+
 ### Open a Pull Request in Each Repo
 
 In [opensearch-build#497](https://github.com/opensearch-project/opensearch-build/issues/497) we needed to remove `integtest.sh` from each repo.
