@@ -28,5 +28,5 @@ Coming from [opensearch-build#567](https://github.com/opensearch-project/opensea
 ### Post Release
 
 - [ ] Create [a release tag](https://github.com/opensearch-project/.github/blob/main/RELEASING.md#tagging).
-- [ ] Suggest improvements to [this template](https://github.com/opensearch-project/opensearch-plugins/templates/release.md).
+- [ ] [Suggest improvements](https://github.com/opensearch-project/opensearch-plugins/issues/new) to [this template](https://github.com/opensearch-project/opensearch-plugins/templates/releases/release-1.2.0.md).
 - [ ] Conduct a postmortem, and publish its results.

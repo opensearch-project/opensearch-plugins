@@ -73,7 +73,7 @@ One of the common scenarios for creating issues in all plugin repos is creating 
 
 1. Locate the parent issue, e.g. [opensearch-build#567](https://github.com/opensearch-project/opensearch-build/issues/567) for version 1.2.
 2. Clone the last template in [templates/releases/](templates/releases), and update version numbers and links, e.g. [release-1.2.0.md](templates/releases/release-1.2.0.md).
-3. Run `meta exec "gh issue create --label release --title 'Release version 1.2' --body-file ../templates/releases/release-1.2.0.md"`.
+3. From [plugins](plugins), run `meta exec "gh issue create --label v1.2.0 --title 'Release version 1.2' --body-file ../../templates/releases/release-1.2.0.md"`.
 
 ### Open a Pull Request in Each Repo
 
