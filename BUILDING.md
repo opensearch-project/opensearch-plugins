@@ -1,9 +1,3 @@
-# Building and Developing Plugins with OpenSearch
-
-## Building Plugins with OpenSearch
-
-Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#581](https://github.com/opensearch-project/OpenSearch/issues/581), plugins may require building all their dependencies and publishing them to Maven local.
-
 - [Building and Developing Plugins with OpenSearch](#building-and-developing-plugins-with-opensearch)
   - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
     - [Publish OpenSearch to Maven Local](#publish-opensearch-to-maven-local)
@@ -15,6 +9,58 @@ Until OpenSearch and other artifacts are published to Maven Central [OpenSearch#
       - [Mandatory elements](#mandatory-elements)
       - [Optional elements](#optional-elements)
     - [Notes](#notes)
+
+
+# Building and Developing Plugins with OpenSearch
+
+## Building Plugins with OpenSearch
+
+OpenSearch and other artifacts are available at public [Maven repository](https://aws.oss.sonatype.org/content/repositories/) for plugins to build against. All `main` and `<major-version>.x (ex: 1.x)` branches for plugins should consume `-SNAPSHOT` artifacts, so that they are built against the latest OpenSearch and other dependencies.
+
+Plugins must declare the dependencies for the root projects and subprojects in the following order. The first two repositories `mavenLocal()` and `maven(aws.oss.sonatype.org)` are mandatory, while the rest are optional and depends on what other dependencies plugins needs to build.
+
+```
+# <plugin-root>/build.gradle
+
+    repositories {
+        mavenLocal()
+        maven { url "https://aws.oss.sonatype.org/content/repositories/snapshots" }
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        jcenter()
+        <any other repository>
+    }
+
+```
+
+This also applies for dependencies for build script itself, in-case the `buildscript{}` needs to consume OpenSearch `build-tools` artifact.
+
+```
+# <plugin-root>/build.gradle
+
+buildscript {
+    ...
+    ...
+    
+    repositories {
+        mavenLocal()
+        maven { url "https://aws.oss.sonatype.org/content/repositories/snapshots" }
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        jcenter()
+    }
+    dependencies {
+       classpath "org.opensearch.gradle:build-tools:${some_version}"
+       ...
+    }
+}
+```
+
+The default build is a `SNAPSHOT` build and can be skipped (for ex: in case of release) like this:
+
+```bash
+./gradlew build -Dbuild.snapshot=false
+```
 
 ### Publish OpenSearch to Maven Local
 
