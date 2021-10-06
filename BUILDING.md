@@ -5,6 +5,7 @@
   - [Consume Dynamic Versions of OpenSearch Dependencies](#consume-dynamic-versions-of-opensearch-dependencies)
   - [Always Build SNAPSHOT Artifacts](#always-build-snapshot-artifacts)
   - [Consume Maven Artifacts in Order](#consume-maven-artifacts-in-order)
+  - [Include Checksums in Maven Publications](#include-checksums-in-maven-publications)
 
 ## Developing Plugins for OpenSearch
 
@@ -32,6 +33,7 @@ OpenSearch builds and releases the core engine at the same time as plugins as on
 2. Consume dynamic versions of OpenSearch dependencies with `-Dopensearch.version=`.
 3. Support building `-SNAPSHOT` vs. release artifacts with `-Dbuild.snapshot=`, default to always building snapshot.
 4. Prioritize Maven local for dependencies, including OpenSearch.
+5. Publish Maven checksums.
 
 ### Define a Version Based on the OpenSearch Dependency
 
@@ -143,3 +145,20 @@ buildscript {
     }
 }
 ```
+
+### Include Checksums in Maven Publications
+
+If your component publishes maven artifacts, use [shadow](https://github.com/johnrengelman/shadow) and always publish checksums.
+
+```gradle
+tasks.withType(Jar) { task ->
+    task.doLast {
+        ant.checksum algorithm: 'md5', file: it.archivePath
+        ant.checksum algorithm: 'sha1', file: it.archivePath
+        ant.checksum algorithm: 'sha-256', file: it.archivePath, fileext: '.sha256'
+        ant.checksum algorithm: 'sha-512', file: it.archivePath, fileext: '.sha512'
+    }
+}
+```
+
+Use `./gradlew publishShadowPublicationToMavenLocal` to produce maven artifacts. When building as part of the monolithic distribution customize `scripts/build.sh` to collect maven artifacts. See [job-scheduler#71](https://github.com/opensearch-project/job-scheduler/pull/71/files) for an example.
