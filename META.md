@@ -58,6 +58,7 @@ This makes it easy to create version labels.
 meta exec "ghi label 'untriaged' -c '#fbca04'"
 meta exec "ghi label 'v1.0.0' -c '#d4c5f9'"
 meta exec "ghi label 'v1.1.0' -c '#c5def5'"
+meta exec "ghi label 'v1.2.0' -c '#bfdadc'"
 meta exec "ghi label 'v2.0.0' -c '#b94c47'"
 ```
 
