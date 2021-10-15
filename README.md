@@ -20,6 +20,7 @@ This repository contains all the things you ever wanted to know about OpenSearch
 ### Naming Conventions
 
 See [CONVENTIONS](CONVENTIONS.md).
+
 ### Managing OpenSearch Plugins
 
 We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch plugins as a set. See [META](META.md) for more information.

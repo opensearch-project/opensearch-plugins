@@ -1,0 +1,16 @@
+{
+  "name": "opensearch-plugins",
+  "version": "1.0.0",
+  "description": "OpenSearch Plugins",
+  "dependencies": {
+    "meta": "^2.2.25",
+    "meta-gh": "^1.1.5"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opensearch-project/opensearch-plugins.git"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/opensearch-project/opensearch-plugins"
+}
