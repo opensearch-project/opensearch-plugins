@@ -6,6 +6,7 @@ This document lists down the standards for OpenSearch plugins which can be used 
   - [Development Best Practices](#development-best-practices)
     - [Separation of Concerns](#separation-of-concerns)
     - [Use Namespacing](#use-namespacing)
+    - [Code Styling](#code-styling)
     - [Use Asynchronous Method Invocation](#use-asynchronous-method-invocation)
     - [Validate User Input](#validate-user-input)
     - [API Versioning](#api-versioning)
@@ -28,6 +29,25 @@ Make sure your plugin follows the SoC design principle and has different functio
 ### Use Namespacing
 
 Make effective use of namespacing since it will allow co-existence of ambiguous names / classes with the same name and help avoid collisions.
+
+### Code Styling
+
+There are two formatting plugins used currently:
+1. Spotless - Provides code formatting and style checking
+2. CheckStyle - Provides style checking
+The advantage of using Spotless over CheckStyle is in addition to check the formatting of the code it also has apply goal that fixes all the style and formatting.
+
+Format Java files with the Eclipse JDT (Java Development Tools) formatter, using the [Spotless Gradle](https://github.com/diffplug/spotless/tree/master/plugin-gradle) plugin. Sample formatting rules can be found [here](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/formatterConfig.xml). 
+
+Please follow these formatting guidelines:
+
+* Java indent is 4 spaces
+* Line width is 140 characters
+* Lines of code surrounded by `// tag::NAME` and `// end::NAME` comments are included in the documentation and should only be 76 characters wide not counting leading indentation. Such regions of code are not formatted automatically as it is not possible to change the line length rule of the formatter for part of a file. Please format such sections sympathetically with the rest of the code, while keeping lines to maximum length of 76 characters.
+* Wildcard imports (`import foo.bar.baz.*`) are forbidden and will cause the build to fail.
+* If *absolutely* necessary, you can disable formatting for regions of code with the `// tag::NAME` and `// end::NAME` directives, but note that these are intended for use in documentation, so please make it clear what you have done, and only do this where the benefit clearly outweighs the decrease in consistency.
+* Note that JavaDoc and block comments i.e. `/* ... */` are not formatted, but line comments i.e `// ...` are.
+* There is an implicit rule that negative boolean expressions should use the form `foo == false` instead of `!foo` for better readability of the code. While this isn't strictly enforced, if might get called out in PR reviews as something to change.
 
 ### Use Asynchronous Method Invocation
 
