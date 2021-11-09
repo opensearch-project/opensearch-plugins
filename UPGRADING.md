@@ -156,7 +156,7 @@ See below for Kibana-related naming conventions.
     }   
    ```
 
-7. Document your newly renamed settings. For example, [documentation-website/.../alerting/settings.md](https://github.com/opensearch-project/documentation-website/blob/main/docs/alerting/settings.md). Many settings and names were bulk-changed in the docs, so this is a good time to ensure that the documentation is accurate.
+7. Document your newly renamed settings. For example, [documentation-website/.../alerting/settings.md](https://github.com/opensearch-project/documentation-website/blob/main/_monitoring-plugins/alerting/settings.md). Many settings and names were bulk-changed in the docs, so this is a good time to ensure that the documentation is accurate.
 
 See [job-scheduler#20](https://github.com/opensearch-project/job-scheduler/pull/20) for an example.
 
@@ -231,7 +231,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
         assertEquals("Delete anomaly detector failed", RestStatus.OK, restStatus(response));
    }
    ```
-6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
+6. Add documentation for the new APIs. For example, [documentation-website/.../ad/api.md](https://github.com/opensearch-project/documentation-website/blob/main/_monitoring-plugins/ad/api.md)
 
 See [anomaly-detection#35](https://github.com/opensearch-project/anomaly-detection/pull/35) for an example.
 
@@ -262,7 +262,7 @@ From here on the doc will be focussed on an ODFE plugin as an example.
    httpServer.createContext(LEGACY_OPENDISTRO_BATCH_METRICS_URL, queryBatchRequestHandler);
    ```    
 5. Add new tests to cover both old and new APIs.
-6. Add documentation for the new APIs. For example, [documentation-website](https://github.com/opensearch-project/documentation-website/blob/main/docs/ad/api.md)
+6. Add documentation for the new APIs. For example, [documentation-website/.../ad/api.md](https://github.com/opensearch-project/documentation-website/blob/main/_monitoring-plugins/ad/api.md)
 
 See [performance-analyzer#18](https://github.com/opensearch-project/performance-analyzer-rca/pull/18) for an example.
 
@@ -299,7 +299,7 @@ See [anomaly-detection-dashboards-plugin#1](https://github.com/opensearch-projec
 
 #### REST API Compatibility with OpenSearch Plugins
 
-If your OpenSearch Dashboards plugin is communicating with a corresponding OpenSearch plugin, you will want to update any migrated API calls (see API changes [here](#rest-apis-backward-compatibility)) to be compatible with the new endpoints.
+If your OpenSearch Dashboards plugin is communicating with a corresponding OpenSearch plugin, you will want to update any migrated API calls (see API changes [here](#backwards-compatibility)) to be compatible with the new endpoints.
 
 For example, the [Anomaly Detection OpenSearch Plugin](https://github.com/opensearch-project/anomaly-detection) migrated all of its APIs to support the `_plugins/*` prefix (PR [here](https://github.com/opensearch-project/anomaly-detection/pull/35)).
 

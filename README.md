@@ -57,8 +57,12 @@ See [STANDARDS](STANDARDS.md) for information regarding plugin standards.
 
 ## Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+See [CONTRIBUTING](CONTRIBUTING.md) for more information.
 
 ## License
 
-This project is licensed under the Apache-2.0 License.
+This project is licensed under the [Apache v2.0 License](LICENSE).
+
+## Copyright
+
+Copyright OpenSearch Contributors. See [NOTICE](NOTICE) for details.
