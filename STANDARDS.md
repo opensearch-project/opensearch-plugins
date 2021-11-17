@@ -40,19 +40,19 @@ OpenSearch Core had two code styling plugins Spotless and CheckStyle. Spotless i
 
 How plugins were using CheckStyle?
 
-Plugins were using CheckStyle formatting plugin present in OpenSearch Core’s build.gradle. When core decided to go with Spotless and removed CheckStyle plugin, it caused issue on plugins side and the build broke as CheckStyle plugin was not available to format the code on plugin side. 
+Plugins were using CheckStyle formatting plugin present in OpenSearch Core’s build.gradle. When OpenSearch decided to go with Spotless in 1.2 and removed CheckStyle plugin, it caused issue on plugins side and the build broke as CheckStyle plugin was not available to format the code on plugin side. Related issue: https://github.com/opensearch-project/OpenSearch/issues/1362 
 
-Reason core decided to go with Spotless:
+Reason OpenSearch decided to go with Spotless:
 
-This was done because core had 2 code styling plugins: Spotless and CheckStyle. Both the plugins have different configurations which created a conflict to have the same formatting over the whole codebase. Huge advantage of using Spotless over CheckStyle is in addition to check the formatting of the code it also has `apply` goal that fixes all the style and formatting.
+This was done because OpenSearch had 2 code styling plugins: Spotless and CheckStyle. Both the plugins have different configurations which created a conflict to have the same formatting over the whole codebase. Huge advantage of using Spotless over CheckStyle is in addition to check the formatting of the code it also has `apply` goal that fixes all the style and formatting.
 
 Plugins are free to use any one of them. Recommended plugin is Spotless.
 
 *To use CheckStyle:*
 
-1. As plugins can no longer use CheckStyle plugin of the core. They need to add the CheckStyle plugin in build.gradle. For example: https://github.com/opensearch-project/k-NN/pull/177
+1. As plugins can no longer use CheckStyle plugin of the OpenSearch. They need to add the CheckStyle plugin in build.gradle. For example: https://github.com/opensearch-project/k-NN/pull/177
 
-2. If any specific checks were added to sync plugin code with the core can be removed to run CheckStyle smoothly on the plugins side.
+2. If any specific checks were added to sync plugin code with the OpenSearch can be removed to run CheckStyle smoothly on the plugins side.
 
 *To use Spotless:*
 
