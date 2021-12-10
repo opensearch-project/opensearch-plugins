@@ -5,6 +5,7 @@
     "anomaly-detection-dashboards-plugin": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
     "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection.git",
     "asynchronous-search": "git@github.com:opensearch-project/asynchronous-search.git",
+    "common-utils": "git@github.com:opensearch-project/common-utils.git",
     "dashboards-reports": "git@github.com:opensearch-project/dashboards-reports.git",
     "dashboards-visualizations": "git@github.com:opensearch-project/dashboards-visualizations.git",
     "index-management-dashboards-plugin": "git@github.com:opensearch-project/index-management-dashboards-plugin.git",
