@@ -16,5 +16,6 @@
 /security/
 /sql/
 /trace-analytics/
+/observability/
 /node_modules/
 /cross-cluster-replication/

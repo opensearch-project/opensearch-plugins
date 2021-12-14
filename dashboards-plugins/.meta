@@ -7,7 +7,7 @@
     "indexManagementDashboards": "git@github.com:opensearch-project/index-management-dashboards-plugin.git",
     "anomalyDetectionDashboards": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
     "reportsDashboards": "git@github.com:opensearch-project/dashboards-reports.git",
-    "traceAnalyticsDashboards": "git@github.com:opensearch-project/trace-analytics.git",
+    "observabilityDashboards": "git@github.com:opensearch-project/observability.git",
     "ganttChartDashboards":"git@github.com:opensearch-project/dashboards-visualizations.git"
   }
 }
