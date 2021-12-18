@@ -151,6 +151,12 @@ find . -name pom.xml -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
 find . -name plugin-descriptor.properties -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
 ```
 
+The cross-cluster-replication plugin needs an update in `SecurityAdminWrapper.sh`.
+
+```
+find . -name SecurityAdminWrapper.sh -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
+```
+
 #### Commit and Push Changes
 
 ```
