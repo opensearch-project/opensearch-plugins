@@ -145,7 +145,7 @@ find . -wholename "*/.github/workflows/*.yml" -print0 | xargs -0 sed -i "s/1.2.2
 Plugins such as k-nn and security need some exact version replacements.
 
 ```
-find . -name build.gradle -print0 | xargs -0 sed -i "s/1.2.2.0/1.2.3.0/g"
+find . -name build.gradle -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
 find . -name CMakeLists.txt -print0 | xargs -0 sed -i "s/1.2.2.0/1.2.3.0/g"
 find . -name pom.xml -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
 find . -name plugin-descriptor.properties -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
