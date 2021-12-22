@@ -111,7 +111,7 @@ meta exec "gh pr create --title 'Removing default integtest.sh.' --body='Coming 
 
 ### Increment a Version in Every Plugin
 
-Because one cannot install an older patch version of a plugin on a newer OpenSearch-min (see [OpenSearch#1707](https://github.com/opensearch-project/OpenSearch/issues/1707)), it's common to have to increment versions in all plugins, without making other changes. This was the case in [the 1.2.3 release](https://github.com/opensearch-project/opensearch-build/issues/1365).
+Because one cannot install an older version of a plugin on a newer version of OpenSearch (see [OpenSearch#1707](https://github.com/opensearch-project/OpenSearch/issues/1707)), it's common to have to increment versions in all plugins, without making other changes. This was the case in [the 1.2.3 release](https://github.com/opensearch-project/opensearch-build/issues/1365).
 
 See also [opensearch-build#1375](https://github.com/opensearch-project/opensearch-build/issues/1375) which aims to supersede this labor-intensive process with plugins auto-incrementing versions for the next development iteration.
 
