@@ -117,11 +117,21 @@ See also [opensearch-build#1375](https://github.com/opensearch-project/opensearc
 
 #### Increment Version in OpenSearch
 
-Increment the version in OpenSearch patch branch, e.g. 1.2, [OpenSearch#1758](https://github.com/opensearch-project/OpenSearch/pull/1758). After this change is merged, backport the version increment change in OpenSearch to `1.x` ([OpenSearch#1759](https://github.com/opensearch-project/OpenSearch/pull/1759)) and `main` ([OpenSearch#1760](https://github.com/opensearch-project/OpenSearch/pull/1760)).
+The auto-increment workflow in [OpenSearch#1816](https://github.com/opensearch-project/OpenSearch/pull/1816) will increment the version in OpenSearch patch branch, e.g. 1.2, [OpenSearch#1758](https://github.com/opensearch-project/OpenSearch/pull/1758), and backport the version increment change in OpenSearch to `1.x` ([OpenSearch#1759](https://github.com/opensearch-project/OpenSearch/pull/1759)) and `main` ([OpenSearch#1760](https://github.com/opensearch-project/OpenSearch/pull/1760)).
 
 #### Create a 1.2.3 Manifest
 
-Create a new manifest that only contains OpenSearch, e.g. [opensearch-build#1369](https://github.com/opensearch-project/opensearch-build/pull/1369). After this manifest is merged, wait for a successful SNAPSHOT build.
+A workflow will create a new manifest that only contains OpenSearch, e.g. [opensearch-build#1369](https://github.com/opensearch-project/opensearch-build/pull/1369). After this manifest is merged, wait for a successful SNAPSHOT build.
+
+#### Prepare for Increments
+
+In the examples below we are incrementing 1.2.2 to 1.2.3.
+
+```
+export INCREMENT_BASE=1.2
+export INCREMENT_FROM=1.2.2
+export INCREMENT_TO=1.2.3
+```
 
 #### Increment Version in Plugins
 
@@ -130,39 +140,39 @@ Check out and update the 1.2 branch.
 ```
 meta git update
 meta git pull origin
-meta git checkout 1.2
-meta git pull origin 1.2
+meta git checkout $INCREMENT_BASE
+meta git pull origin $INCREMENT_BASE
 ```
 
 Replace known versions.
 
 ```
-find . -name build.gradle -print0 | xargs -0 sed -i "s/1.2.2-SNAPSHOT/1.2.3-SNAPSHOT/g"
-find . -wholename "*/.github/workflows/*.yml" -print0 | xargs -0 sed -i "s/1.2.2-SNAPSHOT/1.2.3-SNAPSHOT/g"
-find . -wholename "*/.github/workflows/*.yml" -print0 | xargs -0 sed -i "s/1.2.2.0-SNAPSHOT/1.2.3.0-SNAPSHOT/g"
+find . -name build.gradle -print0 | xargs -0 sed -i "s/$INCREMENT_FROM-SNAPSHOT/$INCREMENT_TO-SNAPSHOT/g"
+find . -wholename "*/.github/workflows/*.yml" -print0 | xargs -0 sed -i "s/$INCREMENT_FROM-SNAPSHOT/$INCREMENT_TO-SNAPSHOT/g"
+find . -wholename "*/.github/workflows/*.yml" -print0 | xargs -0 sed -i "s/$INCREMENT_FROM.0-SNAPSHOT/$INCREMENT_TO.0-SNAPSHOT/g"
 ```
 
 Plugins such as k-nn and security need some exact version replacements.
 
 ```
-find . -name build.gradle -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
-find . -name CMakeLists.txt -print0 | xargs -0 sed -i "s/1.2.2.0/1.2.3.0/g"
-find . -name pom.xml -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
-find . -name plugin-descriptor.properties -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
+find . -name build.gradle -print0 | xargs -0 sed -i "s/$INCREMENT_FROM/$INCREMENT_TO/g"
+find . -name CMakeLists.txt -print0 | xargs -0 sed -i "s/$INCREMENT_FROM.0/$INCREMENT_TO.0/g"
+find . -name pom.xml -print0 | xargs -0 sed -i "s/$INCREMENT_FROM/$INCREMENT_TO/g"
+find . -name plugin-descriptor.properties -print0 | xargs -0 sed -i "s/$INCREMENT_FROM/$INCREMENT_TO/g"
 ```
 
 The cross-cluster-replication plugin needs an update in `SecurityAdminWrapper.sh`.
 
 ```
-find . -name SecurityAdminWrapper.sh -print0 | xargs -0 sed -i "s/1.2.2/1.2.3/g"
+find . -name SecurityAdminWrapper.sh -print0 | xargs -0 sed -i "s/$INCREMENT_FROM/$INCREMENT_TO/g"
 ```
 
 #### Commit and Push Changes
 
 ```
-meta git checkout -b increment-to-1.2.3
+meta git checkout -b increment-to-$INCREMENT_TO
 meta git add .
-meta git commit -s -m "Incremented version to 1.2.3."
+meta git commit -s -m "Incremented version to $INCREMENT_TO."
 ```
 
 Create a remote for your own forks of the plugins. Replace `<your-github-username>`.
@@ -180,25 +190,29 @@ meta exec "git remote get-url origin | sed s/opensearch-project/<your-github-use
 Push the changes to your fork.
 
 ```
-meta exec "git push <your-github-username> increment-to-1.2.3"
+meta exec "git push <your-github-username> increment-to-$INCREMENT_TO"
 ```
 
 #### Create Pull Requests
 
-##### common-utils and job-scheduler
+##### common-utils
 
-Make a pull request incrementing the version into `common-utils` and `job-scheduler` that both depend on `OpenSearch`, e.g. [common-utils#105](https://github.com/opensearch-project/common-utils/pull/105) and [job-scheduler#110](https://github.com/opensearch-project/job-scheduler/pull/110).
+An auto-increment workflow (see [common-utils#106](https://github.com/opensearch-project/common-utils/pull/106)) will auto-increment the version, e.g. [common-utils#105](https://github.com/opensearch-project/common-utils/pull/105).
+
+##### job-scheduler
+
+Make a pull request incrementing the version into `job-scheduler` that depends on `OpenSearch`, e.g. [job-scheduler#110](https://github.com/opensearch-project/job-scheduler/pull/110).
 
 ```
-cd common-utils
-gh pr create --title "Incremented version to 1.2.3." --body "Coming from https://github.com/opensearch-project/opensearch-build/issues/1365." --base 1.2 --label v1.2.3'
+cd job-scheduler
+gh pr create --title "Incremented version to $INCREMENT_TO." --body "Coming from https://github.com/opensearch-project/opensearch-build/issues/1365." --base $INCREMENT_BASE --label v$INCREMENT_TO'
 ```
 
 Add `common-utils` and `job-scheduler` to the 1.2.3 manifest, e.g. [opensearch-build#1374](https://github.com/opensearch-project/opensearch-build/pull/1374) and [opensearch-build#1376](https://github.com/opensearch-project/opensearch-build/pull/1376) (you can combine both as `job-scheduler` doesn't depend on `common-utils`), and wait for a successful SNAPSHOT build.
 
 ##### min-SNAPSHOT
 
-Check that a snapshot build has been published, e.g. [opensearch-min-1.2.3-SNAPSHOT-linux-x64-latest.tar.gz](https://artifacts.opensearch.org/snapshots/core/opensearch/1.2.3-SNAPSHOT/opensearch-min-1.2.3-SNAPSHOT-linux-x64-latest.tar.gz), which is required by most plugins' backwards compatibility tests. See [opensearch-build#1261](https://github.com/opensearch-project/opensearch-build/issues/1261) for automating this.
+Check that a snapshot build has been published, e.g. [opensearch-min-1.2.3-SNAPSHOT-linux-x64-latest.tar.gz](https://artifacts.opensearch.org/snapshots/core/opensearch/1.2.3/opensearch-min-1.2.3-linux-x64-latest.tar.gz), which is required by most plugins' backwards compatibility tests. See [opensearch-build#1261](https://github.com/opensearch-project/opensearch-build/issues/1261) for automating this.
 
 ##### alerting
 
@@ -209,7 +223,7 @@ Make a pull request incrementing the version into `alerting`, which contains `no
 Create pull requests referencing the [parent release issue in opensearch-build](https://github.com/opensearch-project/opensearch-build/issues/1365). You will be prompted for where to push code, choose your fork.
 
 ```
-meta exec 'gh pr create --title "Incremented version to 1.2.3." --body "Coming from https://github.com/opensearch-project/opensearch-build/issues/1365." --base 1.2 --label v1.2.3'
+meta exec 'gh pr create --title "Incremented version to $INCREMENT_TO." --body "Coming from https://github.com/opensearch-project/opensearch-build/issues/1365." --base $INCREMENT_BASE --label v$INCREMENT_TO'
 ```
 
 ##### Update job-scheduler Snapshots
@@ -218,24 +232,24 @@ In addition to the above changes, build and replace the job-scheduler SNAPSHOT j
 
 ```
 cd job-scheduler
-git checkout 1.2
+git checkout $INCREMENT_BASE
 git pull
 ./gradlew assemble
 
 rm ../anomaly-detection/src/test/resources/job-scheduler/*
-cp ./build/distributions/opensearch-job-scheduler-1.2.3.0-SNAPSHOT.zip ../anomaly-detection/src/test/resources/job-scheduler/
-rm -rf ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/1.2.2.0-SNAPSHOT
-mkdir -p ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/1.2.3.0-SNAPSHOT
-cp ./build/distributions/opensearch-job-scheduler-1.2.3.0-SNAPSHOT.zip ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/1.2.3.0-SNAPSHOT
+cp ./build/distributions/opensearch-job-scheduler-$INCREMENT_TO.0-SNAPSHOT.zip ../anomaly-detection/src/test/resources/job-scheduler/
+rm -rf ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/$INCREMENT_FROM.0-SNAPSHOT
+mkdir -p ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/$INCREMENT_TO.0-SNAPSHOT
+cp ./build/distributions/opensearch-job-scheduler-$INCREMENT_TO.0-SNAPSHOT.zip ../anomaly-detection/src/test/resources/org/opensearch/ad/bwc/job-scheduler/$INCREMENT_TO.0-SNAPSHOT
 
 rm ../dashboards-reports/reports-scheduler/src/test/resources/job-scheduler/*
-cp ./build/distributions/opensearch-job-scheduler-1.2.3.0-SNAPSHOT.zip ../dashboards-reports/reports-scheduler/src/test/resources/job-scheduler/
+cp ./build/distributions/opensearch-job-scheduler-$INCREMENT_TO.0-SNAPSHOT.zip ../dashboards-reports/reports-scheduler/src/test/resources/job-scheduler/
 
 rm ../index-management/src/test/resources/job-scheduler/*
-cp ./build/distributions/opensearch-job-scheduler-1.2.3.0-SNAPSHOT.zip ../index-management/src/test/resources/job-scheduler/
+cp ./build/distributions/opensearch-job-scheduler-$INCREMENT_TO.0-SNAPSHOT.zip ../index-management/src/test/resources/job-scheduler/
 ```
 
-For each of `anomaly-detection`, `dashboards-reports`, and `index-management`, use `git add .` to add the above updated-files, commit, and push an update, e.g. `git push <your-github-username> increment-to-1.2.3`.
+For each of `anomaly-detection`, `dashboards-reports`, and `index-management`, use `git add .` to add the above updated-files, commit, and push an update, e.g. `git push <your-github-username> increment-to-$INCREMENT_TO`.
 
 #### Update the Manifest
 
