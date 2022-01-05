@@ -14,6 +14,7 @@
     "k-nn": "git@github.com:opensearch-project/k-nn.git",
     "notifications": "git@github.com:opensearch-project/notifications.git",
     "performance-analyzer": "git@github.com:opensearch-project/performance-analyzer.git",
+    "performance-analyzer-rca": "git@github.com:opensearch-project/performance-analyzer-rca.git",
     "security-dashboards-plugin": "git@github.com:opensearch-project/security-dashboards-plugin",
     "security": "git@github.com:opensearch-project/security.git",
     "sql": "git@github.com:opensearch-project/sql.git",

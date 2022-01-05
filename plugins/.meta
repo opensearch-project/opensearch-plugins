@@ -9,6 +9,7 @@
     "job-scheduler": "git@github.com:opensearch-project/job-scheduler.git",
     "k-nn": "git@github.com:opensearch-project/k-nn.git",
     "performance-analyzer": "git@github.com:opensearch-project/performance-analyzer.git",
+    "performance-analyzer-rca": "git@github.com:opensearch-project/performance-analyzer-rca.git",
     "security": "git@github.com:opensearch-project/security.git",
     "sql": "git@github.com:opensearch-project/sql.git",
     "observability": "git@github.com:opensearch-project/observability.git",
