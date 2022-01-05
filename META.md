@@ -196,13 +196,13 @@ gh pr create --title "Incremented version to 1.2.3." --body "Coming from https:/
 
 Add `common-utils` and `job-scheduler` to the 1.2.3 manifest, e.g. [opensearch-build#1374](https://github.com/opensearch-project/opensearch-build/pull/1374) and [opensearch-build#1376](https://github.com/opensearch-project/opensearch-build/pull/1376) (you can combine both as `job-scheduler` doesn't depend on `common-utils`), and wait for a successful SNAPSHOT build.
 
-##### alerting
-
-Make a pull request incrementing the version into `alerting`, which contains `notifications` that `index-management` depends on, e.g. [alerting#261](https://github.com/opensearch-project/alerting/pull/261). Add that plugin to the manifest and wait for a successful SNAPSHOT build, e.g. [opensearch-build#1379](https://github.com/opensearch-project/opensearch-build/pull/1379).
-
 ##### min-SNAPSHOT
 
 Check that a snapshot build has been published, e.g. [opensearch-min-1.2.3-SNAPSHOT-linux-x64-latest.tar.gz](https://artifacts.opensearch.org/snapshots/core/opensearch/1.2.3-SNAPSHOT/opensearch-min-1.2.3-SNAPSHOT-linux-x64-latest.tar.gz), which is required by most plugins' backwards compatibility tests. See [opensearch-build#1261](https://github.com/opensearch-project/opensearch-build/issues/1261) for automating this.
+
+##### alerting
+
+Make a pull request incrementing the version into `alerting`, which contains `notifications` that `index-management` depends on, e.g. [alerting#261](https://github.com/opensearch-project/alerting/pull/261). Add that plugin to the manifest and wait for a successful SNAPSHOT build, e.g. [opensearch-build#1379](https://github.com/opensearch-project/opensearch-build/pull/1379).
 
 ##### Remaining Plugins
 
