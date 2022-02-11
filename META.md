@@ -10,15 +10,18 @@
   - [Increment a Version in Every Plugin](#increment-a-version-in-every-plugin)
     - [Increment Version in OpenSearch](#increment-version-in-opensearch)
     - [Create a 1.2.3 Manifest](#create-a-123-manifest)
+    - [Prepare for Increments](#prepare-for-increments)
     - [Increment Version in Plugins](#increment-version-in-plugins)
     - [Commit and Push Changes](#commit-and-push-changes)
     - [Create Pull Requests](#create-pull-requests)
-      - [common-utils and job-scheduler](#common-utils-and-job-scheduler)
-      - [alerting](#alerting)
+      - [common-utils](#common-utils)
+      - [job-scheduler](#job-scheduler)
       - [min-SNAPSHOT](#min-snapshot)
+      - [alerting](#alerting)
       - [Remaining Plugins](#remaining-plugins)
       - [Update job-scheduler Snapshots](#update-job-scheduler-snapshots)
     - [Update the Manifest](#update-the-manifest)
+  - [Backporting in OpenSearch Plugins](#backporting-in-opensearch-plugins)
 
 ## Managing OpenSearch Plugins
 
@@ -254,3 +257,7 @@ For each of `anomaly-detection`, `dashboards-reports`, and `index-management`, u
 #### Update the Manifest
 
 Ensure all plugins pass CI and the version increments have been merged. Add the remaining components to the manifest, e.g. [opensearch-build#1380](https://github.com/opensearch-project/opensearch-build/pull/1380).
+
+### Backporting in OpenSearch Plugins
+
+See [BACKPORT](BACKPORT.md).
