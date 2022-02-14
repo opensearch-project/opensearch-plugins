@@ -21,7 +21,6 @@
       - [Remaining Plugins](#remaining-plugins)
       - [Update job-scheduler Snapshots](#update-job-scheduler-snapshots)
     - [Update the Manifest](#update-the-manifest)
-  - [Backporting in OpenSearch Plugins](#backporting-in-opensearch-plugins)
 
 ## Managing OpenSearch Plugins
 
@@ -257,7 +256,3 @@ For each of `anomaly-detection`, `dashboards-reports`, and `index-management`, u
 #### Update the Manifest
 
 Ensure all plugins pass CI and the version increments have been merged. Add the remaining components to the manifest, e.g. [opensearch-build#1380](https://github.com/opensearch-project/opensearch-build/pull/1380).
-
-### Backporting in OpenSearch Plugins
-
-See [BACKPORT](BACKPORT.md).
