@@ -123,7 +123,6 @@ repositories {
     maven { url "https://aws.oss.sonatype.org/content/repositories/snapshots" }
     mavenCentral()
     maven { url "https://plugins.gradle.org/m2/" }
-    jcenter()
     ...
 }
 ```
@@ -137,7 +136,6 @@ buildscript {
         maven { url "https://aws.oss.sonatype.org/content/repositories/snapshots" }
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
-        jcenter()
     }
     dependencies {
        classpath "org.opensearch.gradle:build-tools:${opensearch_version}"
