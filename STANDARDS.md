@@ -32,34 +32,13 @@ Make effective use of namespacing since it will allow co-existence of ambiguous 
 
 ### Code Styling
 
-There are two code styling plugins used currently:
-1. Spotless - Provides code formatting and style checking
-2. CheckStyle - Provides style checking
-
-OpenSearch Core had two code styling plugins Spotless and CheckStyle. Spotless itself can format the code and check the standard java code using spotlessApply and spotlessJavaCheck respectively. Both the plugins have different configuration for formatting which restricted us to run Spotless on all the subprojects. Removing CheckStyle helped to run a unified formatting on the codebase. 
-
-How plugins were using CheckStyle?
-
-Plugins were using CheckStyle formatting plugin present in OpenSearch Core’s build.gradle. When OpenSearch decided to go with Spotless in 1.2 and removed CheckStyle plugin, it caused issue on plugins side and the build broke as CheckStyle plugin was not available to format the code on plugin side. Related issue: https://github.com/opensearch-project/OpenSearch/issues/1362 
-
-Reason OpenSearch decided to go with Spotless:
-
-This was done because OpenSearch had 2 code styling plugins: Spotless and CheckStyle. Both the plugins have different configurations which created a conflict to have the same formatting over the whole codebase. Huge advantage of using Spotless over CheckStyle is in addition to check the formatting of the code it also has `apply` goal that fixes all the style and formatting.
-
-Plugins are free to use any one of them. Recommended plugin is Spotless.
-
-*To use CheckStyle:*
-
-1. As plugins can no longer use CheckStyle plugin of the OpenSearch. They need to add the CheckStyle plugin in build.gradle. For example: https://github.com/opensearch-project/k-NN/pull/177
-
-2. If any specific checks were added to sync plugin code with the OpenSearch can be removed to run CheckStyle smoothly on the plugins side.
+Code styling is done with [Spotless](https://github.com/diffplug/spotless).
 
 *To use Spotless:*
 
 1. Add Spotless plugin in build.gradle.
 2. Format Java files with the Eclipse JDT (Java Development Tools) formatter, using the [Spotless Gradle](https://github.com/diffplug/spotless/tree/master/plugin-gradle) plugin. Sample formatting rules can be found [here](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/formatterConfig.xml).
 
-No matter which plugin you chose for code styling, make sure the formatting guidelines remains the same.
 Please follow these formatting guidelines:
 
 * Java indent is 4 spaces
