@@ -13,6 +13,7 @@
     "security": "git@github.com:opensearch-project/security.git",
     "sql": "git@github.com:opensearch-project/sql.git",
     "observability": "git@github.com:opensearch-project/observability.git",
-    "cross-cluster-replication": "git@github.com:opensearch-project/cross-cluster-replication.git"
+    "cross-cluster-replication": "git@github.com:opensearch-project/cross-cluster-replication.git",
+    "ml-commons": "git@github.com:opensearch-project/ml-commons.git"
   }
 }
