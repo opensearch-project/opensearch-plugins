@@ -32,12 +32,12 @@ Make effective use of namespacing since it will allow co-existence of ambiguous 
 
 ### Code Styling
 
-There are two formatting plugins used currently:
-1. Spotless - Provides code formatting and style checking
-2. CheckStyle - Provides style checking
-The advantage of using Spotless over CheckStyle is in addition to check the formatting of the code it also has apply goal that fixes all the style and formatting.
+Code styling is done with [Spotless](https://github.com/diffplug/spotless).
 
-Format Java files with the Eclipse JDT (Java Development Tools) formatter, using the [Spotless Gradle](https://github.com/diffplug/spotless/tree/master/plugin-gradle) plugin. Sample formatting rules can be found [here](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/formatterConfig.xml). 
+*To use Spotless:*
+
+1. Add Spotless plugin in build.gradle.
+2. Format Java files with the Eclipse JDT (Java Development Tools) formatter, using the [Spotless Gradle](https://github.com/diffplug/spotless/tree/master/plugin-gradle) plugin. Sample formatting rules can be found [here](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/formatterConfig.xml).
 
 Please follow these formatting guidelines:
 
