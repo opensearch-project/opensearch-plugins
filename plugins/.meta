@@ -14,6 +14,7 @@
     "sql": "git@github.com:opensearch-project/sql.git",
     "observability": "git@github.com:opensearch-project/observability.git",
     "cross-cluster-replication": "git@github.com:opensearch-project/cross-cluster-replication.git",
-    "ml-commons": "git@github.com:opensearch-project/ml-commons.git"
+    "ml-commons": "git@github.com:opensearch-project/ml-commons.git",
+    "geospatial": "git@github.com:opensearch-project/geospatial.git"
   }
 }
