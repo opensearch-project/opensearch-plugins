@@ -12,4 +12,4 @@
 
 ### Backports
 
-After a PR is merged, maintainers can backport this PR to appropriate release branches if applicable. To automatically backport PRs, please see [BACKPORT](BACKPORT.md).
+After a PR is merged, maintainers can backport this PR to appropriate release branches if applicable. To automatically backport PRs, please see [BACKPORT](WORKFLOWS.md#managing-backports).
