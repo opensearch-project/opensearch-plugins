@@ -39,7 +39,7 @@ Integrating the backport workflow is easy and can be done with the following ste
 
 To use the auto backport workflow:
 
-1. Label the original PR according to the release-branch. For example, to backport to 1.x, please add a label `backport 1.x`. You can add multiple backport labels to different release branches. Labels can be added in any order: meaning before or after the PR is merged. Note that there is an [auto-labeling](./LABELS.md) action that can be configured to help automate this process.
+1. Label the original PR according to the release-branch. For example, to backport to 1.x, please add a label `backport 1.x`. You can add multiple backport labels to different release branches. Labels can be added in any order: meaning before or after the PR is merged. Note that there is an [auto-labeling](#labeling-prs) action that can be configured to help automate this process.
 2. Once the label is added and the original PR is in a merged state, the auto backport workflow will create backport PR if there are no merge conflicts using `opensearch-trigger-bot`. If there are merge conflicts, it will comment on the original PR on the steps to take.
 3. Once the backport PR is merged, the branch created for backport will be auto-deleted.
 

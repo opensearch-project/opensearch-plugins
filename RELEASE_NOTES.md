@@ -110,4 +110,4 @@ _Correct:_ `* Fix the out of memory issue ([#456](http:/#456))`
 
 Create a GitHub Actions workflow to help draft release notes. See [.github/workflows/draft-release-notes.yml](.github/workflows/draft-release-notes.yml) for an example. This workflow is configured using [.github/draft-release-notes-config.yml](.github/draft-release-notes-config.yml).
 
-See [release-drafter](https://github.com/release-drafter/release-drafter) for more information. Note that this GitHub action utilizes labels on PRs. For more information on automating labels, see the [auto-labeling workflow](./LABELS.md).
+See [release-drafter](https://github.com/release-drafter/release-drafter) for more information. Note that this GitHub action utilizes labels on PRs. For more information on automating labels, see the [auto-labeling workflow](./WORKFLOWS.md#labeling-prs).
