@@ -1,6 +1,7 @@
 <!-- TOC -->
 - [Headers](#headers)
-    - [License Headers](#license-headers)
+  - [License Headers](#license-headers)
+  - [Automated License Headers' Checks](#automated-license-headers-checks)
 <!-- TOC -->
 ## Headers
 

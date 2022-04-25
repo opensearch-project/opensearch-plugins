@@ -7,11 +7,13 @@
   - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
   - [Installing Plugins](#installing-plugins)
   - [Developing Plugins for OpenSearch](#developing-plugins-for-opensearch)
+  - [Workflows](#workflows)
   - [Plugin Release Notes](#plugin-release-notes)
   - [Headers](#headers)
   - [Standards](#standards)
 - [Contributing](#contributing)
 - [License](#license)
+- [Copyright](#copyright)
 
 ## OpenSearch Plugins
 
@@ -42,6 +44,10 @@ See [INSTALLING](INSTALLING.md) for details.
 ### Developing Plugins for OpenSearch
 
 See [DEVELOPING_PLUGINS](BUILDING.md#developing-new-plugins-for-opensearch) for details.
+
+### Workflows
+
+See [WORKFLOWS](WORKFLOWS.md) for useful workflows that can be added.
 
 ### Plugin Release Notes
 
