@@ -1,4 +1,4 @@
-- [Custom Gradle Plugins](#custom-gradle-plugins-for-opensearch)
+- [Custom Gradle Plugins](#custom-gradle-plugins)
   - [`opensearch.pluginzip`](#opensearch.pluginzip)
     - [Plugin Design](#plugin-design)
     - [Plugin Usage](#plugin-usage)
