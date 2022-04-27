@@ -3,7 +3,7 @@
     - [Plugin Design](#plugin-design)
     - [Plugin Usage](#plugin-usage)
 
-## Custom Gradle Plugins Usage
+## Custom Gradle Plugins
 
 This doc will guide the usage of built in custom gradle plugins.
 
