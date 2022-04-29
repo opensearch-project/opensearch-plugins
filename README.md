@@ -44,7 +44,7 @@ See [INSTALLING](INSTALLING.md) for details.
 
 ### Gradle custom plugins
 
-See [GRADLE CUSTOM PLUGINS](/GRADLE_CUSTOM_PLUGINS.md) for details.
+See [Custom Gradle Plugins](/BUILDING.md#custom-gradle-plugins) for details.
 
 ### Developing Plugins for OpenSearch
 
