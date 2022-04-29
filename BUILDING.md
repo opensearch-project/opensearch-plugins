@@ -213,7 +213,7 @@ Once added, this should list the new task `publishPluginZipPublicationToZipStagi
 * Run the task `publishPluginZipPublicationToZipStagingRepository` (add it to managed build script build.sh)  
 ```./gradlew publishPluginZipPublicationToZipStagingRepository -Dopensearch.version=$VERSION -Dbuild.snapshot=$SNAPSHOT -Dbuild.version_qualifier=$QUALIFIER```
 
-Note: The gradle assemble task `./gradlew assemble` should be called first before calling `publishPluginZipPublicationToZipStagingRepository`, as zip file need to be generated first before publishing.
+    Note: The gradle assemble task `./gradlew assemble` should be called first before calling `publishPluginZipPublicationToZipStagingRepository`, as zip file need to be generated first before publishing.
 
 * To add custom POM extensions: 
 Example: 
