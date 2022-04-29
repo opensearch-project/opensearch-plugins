@@ -249,12 +249,12 @@ allprojects {
 ```
 * To run `build` task using `./gradlew build` for the entire project instead of running specific tasks, add the line ```startParameter.excludedTaskNames=["validatePluginZipPom"]``` in `settings.gradle` file, this task `validatePluginZipPom` is not required for this plugin.
 
-Note: If gradle project is executed by specific task, then its not required to add ```startParameter.excludedTaskNames=["validatePluginZipPom"]```, only required when ran `./gradlew build`. 
+    Note: If gradle project is executed by specific task, then its not required to add ```startParameter.excludedTaskNames=["validatePluginZipPom"]```, only required when ran `./gradlew build`. 
 
 * Exclude the following tasks in `settings.gradle` file, if the build script exists for the plugin and has the tasks `publishToMavenLocal` and `publishAllPublicationsToStagingRepository`, these will also include the tasks `publishPluginZipPublicationToMavenLocal` and `publishPluginZipPublicationToStagingRepository` which is not required to be called with this plugin.
 To exclude add the following in `settings.gradle` file ```startParameter.excludedTaskNames=["publishPluginZipPublicationToMavenLocal", "publishPluginZipPublicationToStagingRepository"]```
 
-Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exlcude these tasks, only required if it is calling publish tasks that targets ALL repos and ALL publications.
+    Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exlcude these tasks, only required if it is calling publish tasks that targets ALL repos and ALL publications.
 
 * Quick Example:
 Job-scheduler:
