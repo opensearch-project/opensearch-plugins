@@ -42,10 +42,6 @@ To upgrade your existing plugins to work with OpenSearch, see [UPGRADING](./UPGR
 
 See [INSTALLING](INSTALLING.md) for details.
 
-### Gradle custom plugins
-
-See [Custom Gradle Plugins](/BUILDING.md#custom-gradle-plugins) for details.
-
 ### Developing Plugins for OpenSearch
 
 See [DEVELOPING_PLUGINS](BUILDING.md#developing-new-plugins-for-opensearch) for details.
