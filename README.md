@@ -6,7 +6,6 @@
   - [Building Plugins with OpenSearch](#building-plugins-with-opensearch)
   - [Upgrading Plugins to work with OpenSearch](#upgrading-plugins-to-work-with-opensearch)
   - [Installing Plugins](#installing-plugins)
-  - [Gradle custom plugins](#gradle-custom-plugins)
   - [Developing Plugins for OpenSearch](#developing-plugins-for-opensearch)
   - [Workflows](#workflows)
   - [Plugin Release Notes](#plugin-release-notes)
