@@ -242,7 +242,7 @@ allprojects {
 }
 ```
 
-6. To run `build` task using `./gradlew build` for the entire project without having proper reference in generate POM add ```startParameter.excludedTaskNames=["validatePluginZipPom"]``` in `settings.gradle` file, this task `validatePluginZipPom` is not required if POM is formated right with `name`, `description`, `licenses`, `developers` fields. If these fields not added and executed `./gradlew build` would throw an error as
+6. To run `build` task using `./gradlew build` for the entire project without having proper POM reference, add ```startParameter.excludedTaskNames=["validatePluginZipPom"]``` in `settings.gradle` file, this task `validatePluginZipPom` is not required if POM is formated right with `name`, `description`, `licenses`, `developers` fields. If these fields not added and executed `./gradlew build` would throw an error as
 
 ```
 name is missing in [/usr/share/opensearch/git/opensearch-plugin-template-java/build/distributions/rename-unspecified.pom]
