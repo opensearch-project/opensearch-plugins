@@ -215,27 +215,27 @@ Once added, this should list the new task `publishPluginZipPublicationToZipStagi
 
     Note: The gradle assemble task `./gradlew assemble` should be called first before calling `publishPluginZipPublicationToZipStagingRepository`, as zip file need to be generated first before publishing.
 
-5. To add custom POM extensions: 
+5. To add custom POM extensions to zip publication: 
 Example: 
 ```
-allprojects {
-    project.ext.licenseName = 'The Apache Software License, Version 2.0'
-    project.ext.licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    publishing {
-        publications {
-            all {
-                pom.withXml { XmlProvider xml ->
-                    Node node = xml.asNode()
-                    node.appendNode('inceptionYear', '2022')
-                    node.appendNode('name', 'rename')
-                    node.appendNode('description', 'Custom plugin')
-                    Node license = node.appendNode('licenses').appendNode('license')
-                    license.appendNode('name', project.licenseName)
-                    license.appendNode('url', project.licenseUrl)
-                    Node developer = node.appendNode('developers').appendNode('developer')
-                    developer.appendNode('name', 'OpenSearch')
-                    developer.appendNode('url', 'https://github.com/opensearch-project/opensearch-plugin-template-java')
+publishing {
+    publications {
+        pluginZip(MavenPublication) { publication ->
+            pom {
+              name = pluginName
+              description = pluginDescription
+              licenses {
+                license {
+                  name = "The Apache License, Version 2.0"
+                  url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
+              }
+              developers {
+                developer {
+                  name = "OpenSearch"
+                  url = "https://github.com/opensearch-project/opensearch-plugin-template-java"
+                }
+              }
             }
         }
     }
