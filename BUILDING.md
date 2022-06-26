@@ -251,7 +251,7 @@ licenses is empty in [/usr/share/opensearch/git/opensearch-plugin-template-java/
 developers is empty in [/usr/share/opensearch/git/opensearch-plugin-template-java/build/distributions/rename-unspecified.pom]
 ```
 
-    Note: If gradle project already has the setting as shown in step 5, then its not required to add ```startParameter.excludedTaskNames=["validatePluginZipPom"]```. This setting is only required, when ran `./gradlew build` without proper POM reference.
+    Note: If gradle project already has the setting as shown in step 5, then its not required to add ```startParameter.excludedTaskNames=["validatePluginZipPom"]```. This setting is only required when ran `./gradlew build` without proper POM reference.
 
 7. Exclude the following tasks in `settings.gradle` file, if the build script exists for the plugin and has the tasks `publishToMavenLocal` and `publishAllPublicationsToStagingRepository`, these will also include the tasks `publishPluginZipPublicationToMavenLocal` and `publishPluginZipPublicationToStagingRepository` which is not required to be called with this plugin.
 To exclude add the following in `settings.gradle` file ```startParameter.excludedTaskNames=["publishPluginZipPublicationToMavenLocal", "publishPluginZipPublicationToStagingRepository"]```
