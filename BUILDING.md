@@ -256,7 +256,7 @@ developers is empty in [/usr/share/opensearch/git/opensearch-plugin-template-jav
 7. Exclude the following tasks in `settings.gradle` file, if the build script exists for the plugin and has the tasks `publishToMavenLocal` and `publishAllPublicationsToStagingRepository`, these will also include the tasks `publishPluginZipPublicationToMavenLocal` and `publishPluginZipPublicationToStagingRepository` which is not required to be called with this plugin.
 To exclude add the following in `settings.gradle` file ```startParameter.excludedTaskNames=["publishPluginZipPublicationToMavenLocal", "publishPluginZipPublicationToStagingRepository"]```
 
-    Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exlcude these tasks, only required if it is calling publish tasks that targets `AL`L repos and `ALL` publications.
+    Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exlcude these tasks, only required if it is calling publish tasks that targets `ALL` repos and `ALL` publications.
 
 8. Quick Example:
     Job-scheduler:
