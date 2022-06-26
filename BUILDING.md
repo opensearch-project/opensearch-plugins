@@ -173,7 +173,7 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 
 ### opensearch.pluginzip
 
-`opensearch.pluginzip` is designed to facilitate OpenSearch plugin zips to be available in maven repo which can then be fetched for dependency using maven coordinates. This plugin identifies the generated OpenSearch plugin zip file distribution, the ouput of `bundlePlugin` task and publishes to local maven repo with standard maven coordinates.
+`opensearch.pluginzip` is designed to facilitate OpenSearch plugin zips to be available in maven repo which can then be fetched for dependency using maven coordinates. This plugin identifies the OpenSearch plugin zip file, the ouput of `bundlePlugin` task and publishes to local maven repo with standard maven coordinates.
 [Plugin Code](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/main/java/org/opensearch/gradle/pluginzip), [Plugin Tests](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/test/java/org/opensearch/gradle/pluginzip), [Plugin META-INF](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/resources/META-INF/gradle-plugins/opensearch.pluginzip.properties)
 
 
