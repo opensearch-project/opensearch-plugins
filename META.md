@@ -76,6 +76,11 @@ meta exec "ghi label 'v1.2.0' -c '#bfdadc'"
 meta exec "ghi label 'v2.0.0' -c '#b94c47'"
 ```
 
+Alternate option if you are having issues with `ghi`:
+
+```
+meta exec "gh label create v2.2.0 -c '#537DB0'"
+```
 ### Create an Issue in All Plugin Repos
 
 Create a file for the issue body, e.g. `issue.md`.
