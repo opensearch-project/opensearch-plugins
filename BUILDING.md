@@ -173,7 +173,7 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 
 ### opensearch.pluginzip
 
-`opensearch.pluginzip` is designed to facilitate OpenSearch plugin zips to be available in maven repo which can then be fetched for dependency using maven coordinates. This plugin identifies the OpenSearch plugin zip file, the ouput of `bundlePlugin` task and publishes to local maven repo with standard maven coordinates.
+`opensearch.pluginzip` is designed to facilitate OpenSearch plugin distributions (ZIPs) to be available as Apache Maven artifacts which can then be fetched as dependency using Apache Maven dependency management. This plugin identifies the OpenSearch plugin ZIP file, the output of `bundlePlugin` task and publishes to local Apache Maven repository.
 [Plugin Code](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/main/java/org/opensearch/gradle/pluginzip), [Plugin Tests](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/test/java/org/opensearch/gradle/pluginzip), [Plugin META-INF](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/resources/META-INF/gradle-plugins/opensearch.pluginzip.properties)
 
 
@@ -181,10 +181,10 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 
 * `opensearch.pluginzip` is java based code published into build-tools.
 * The maven coordinates groupID is fixed as `org.openserach.plugin`, `version` and `artifcatID` will be inferred from gradle project properties.
-* User can also pass custom POM extensions, that will add desired properties to maven POM file generated during runtime.
-* Once the plugin is added to the `build.gradle` as `apply plugin: 'opensearch.pluginzip'`, this will add a new custom publish task `publishPluginZipPublicationToZipStagingRepository`, the purpose of this task is to publish the zip distribution to the maven local (file system).
-* The maven local artifacts will then be published to maven central/nexus using [CI workflows](https://github.com/opensearch-project/opensearch-build/tree/main/jenkins).
-* The plugin will not add generated jars by tasks `sourcesJar` and `javadocJar`, this is done in purpose to exclude `jars` for `zip` publications.
+* User can also pass custom POM extensions, that will add desired properties to Apache Maven POM file generated during runtime.
+* Once the plugin is added to the `build.gradle` as `apply plugin: 'opensearch.pluginzip'`, this will add a new custom publish task `publishPluginZipPublicationToZipStagingRepository`, the purpose of this task is to publish the ZIP distribution to the Apache Maven local repository (file system).
+* The Apache Maven local artifacts could then be published to Apache Maven central/nexus using [CI workflows](https://github.com/opensearch-project/opensearch-build/tree/main/jenkins).
+* The plugin will not publish generated JARs (`sourcesJar`, `javadocJar`), this is done on purpose to separate `jars` and `zip` publications.
 
 #### Plugin Usage
 
