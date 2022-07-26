@@ -8,6 +8,7 @@
     "anomalyDetectionDashboards": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
     "reportsDashboards": "git@github.com:opensearch-project/dashboards-reports.git",
     "observabilityDashboards": "git@github.com:opensearch-project/observability.git",
-    "ganttChartDashboards":"git@github.com:opensearch-project/dashboards-visualizations.git"
+    "ganttChartDashboards": "git@github.com:opensearch-project/dashboards-visualizations.git",
+    "dashboards-maps": "git@github.com:opensearch-project/dashboards-maps.git"
   }
 }
