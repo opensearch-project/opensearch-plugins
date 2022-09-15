@@ -12,15 +12,14 @@ Link [Apache License v2](LICENSE)
 All files in opensearch-project should use OpenSearch SPDX license.  
 ```
 /*
+ * Copyright OpenSearch Contributors
  * SPDX-License-Identifier: Apache-2.0
  *
  * The OpenSearch Contributors require contributions made to
  * this file be licensed under the Apache-2.0 license or a
  * compatible open source license.
  *
- * Modifications Copyright OpenSearch Contributors. See
- * GitHub history for details.
- */
+*/
 ```
 
 If files have any existing headers keep them and add OpenSearch SPDX license header on top.  
