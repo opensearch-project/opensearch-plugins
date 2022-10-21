@@ -21,7 +21,7 @@ All OpenSearch plugins require a `plugin-descriptor.properties` file. The fields
 
 Use `opensearchplugin` in `build.gradle` to generate a `plugin-descriptor.properties`. 
 
-```
+```gradle
 opensearchplugin {
     name 'opensearch-plugin'
     description 'Example OpenSearch plugin'
@@ -153,7 +153,7 @@ buildscript {
 If your component publishes maven artifacts, use [shadow](https://github.com/johnrengelman/shadow) and publish to a local repository at a non default location.
 The maven publish plugin used by gradle will not include checksums when publishing to maven local `~/m2/repository`.
 
-```
+```gradle
 publishing {
     repositories {
         maven {
@@ -174,15 +174,16 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 ### opensearch.pluginzip
 
 `opensearch.pluginzip` is designed to facilitate OpenSearch plugin distributions (ZIPs) to be available as Apache Maven artifacts which can then be fetched as dependency using Apache Maven dependency management. This plugin identifies the OpenSearch plugin ZIP file, the output of `bundlePlugin` task and publishes to local Apache Maven repository.
-[Plugin Code](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/main/java/org/opensearch/gradle/pluginzip), [Plugin Tests](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/test/java/org/opensearch/gradle/pluginzip), [Plugin META-INF](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/resources/META-INF/gradle-plugins/opensearch.pluginzip.properties)
+[Plugin Code](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/main/java/org/opensearch/gradle/pluginzip), [Plugin META-INF](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/resources/META-INF/gradle-plugins/opensearch.pluginzip.properties), [Plugin Tests](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/test/java/org/opensearch/gradle/pluginzip), and [gradle build script examples](https://github.com/opensearch-project/OpenSearch/tree/main/buildSrc/src/test/resources/pluginzip) used by Plugin Tests. 
 
 
 #### Plugin Design
 
 * `opensearch.pluginzip` is java based code published into build-tools.
-* The maven coordinates groupID is fixed as `org.openserach.plugin`, `version` and `artifcatID` will be inferred from gradle project properties.
+* The maven coordinates `groupID`, `version` and `artifcatID` will be inferred from gradle project properties. (Prior to OpenSearch 2.4 the `groupId` was fixed as `org.openserach.plugin` regardless of actual gradle project `group` value or pluginZip publication POM customizations.)
 * User can also pass custom POM extensions, that will add desired properties to Apache Maven POM file generated during runtime.
 * Once the plugin is added to the `build.gradle` as `apply plugin: 'opensearch.pluginzip'`, this will add a new custom publish task `publishPluginZipPublicationToZipStagingRepository`, the purpose of this task is to publish the ZIP distribution to the Apache Maven local repository (file system).
+* Internally the plugin will apply both the '[nebula.maven-base-publish](https://plugins.gradle.org/plugin/nebula.maven-base-publish)' and '[maven-publish](https://docs.gradle.org/current/userguide/publishing_maven.html)' plugins which means that it is not necessary to explicitly apply these in your project. 
 * The Apache Maven local artifacts could then be published to Apache Maven central/nexus using [CI workflows](https://github.com/opensearch-project/opensearch-build/tree/main/jenkins).
 * The plugin will not publish generated JARs (`sourcesJar`, `javadocJar`), this is done on purpose to separate `jars` and `zip` publications.
 
@@ -191,9 +192,9 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 1. Ensure that the project uses `bundlePlugin` task that comes from existing [PublishPlugin](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/java/org/opensearch/gradle/PublishPlugin.java). 
 `./gradlew tasks --all` should list `bundlePlugin`.
 
-2. Add build-tools dependency to the current gradle project. (If already exists, dont need to re-add again)
+2. Add build-tools dependency to the current gradle project. (If already exists, dont need to re-add again).
 Example:
-```
+```gradle
 buildscript {
     ext {
         opensearch_version = System.getProperty("opensearch.version", "2.0.0-rc1-SNAPSHOT")
@@ -217,7 +218,7 @@ Once added, this should list the new task `publishPluginZipPublicationToZipStagi
 
 5. To add custom POM extensions to zip publication: 
 Example: 
-```
+```gradle
 publishing {
     publications {
         pluginZip(MavenPublication) { publication ->
@@ -242,7 +243,7 @@ publishing {
 }
 ```
 
-6. To run `build` task using `./gradlew build` for the entire project without having proper POM reference, add ```startParameter.excludedTaskNames=["validatePluginZipPom"]``` in `settings.gradle` file, this task `validatePluginZipPom` is not required if POM is formated right with `name`, `description`, `licenses`, `developers` fields. If these fields not added and executed `./gradlew build` would throw an error as
+6. To run `build` task using `./gradlew build` for the entire project without having proper POM reference, add ```startParameter.excludedTaskNames=["validatePluginZipPom"]``` in `settings.gradle` file, this task `validatePluginZipPom` is not required if POM is formatted right with `name`, `description`, `licenses`, `developers` fields. If these fields not added and executed `./gradlew build` would throw an error as
 
 ```
 name is missing in [/usr/share/opensearch/git/opensearch-plugin-template-java/build/distributions/rename-unspecified.pom]
@@ -251,12 +252,12 @@ licenses is empty in [/usr/share/opensearch/git/opensearch-plugin-template-java/
 developers is empty in [/usr/share/opensearch/git/opensearch-plugin-template-java/build/distributions/rename-unspecified.pom]
 ```
 
-    Note: If gradle project already has the setting as shown in step 5, then its not required to add ```startParameter.excludedTaskNames=["validatePluginZipPom"]```. This setting is only required when ran `./gradlew build` without proper POM reference.
+   * **Note:** If gradle project already has the setting as shown in step 5, then its not required to add `startParameter.excludedTaskNames=["validatePluginZipPom"]`. This setting is only required when ran `./gradlew build` without proper POM reference.
 
 7. Exclude the following tasks in `settings.gradle` file, if the build script exists for the plugin and has the tasks `publishToMavenLocal` and `publishAllPublicationsToStagingRepository`, these will also include the tasks `publishPluginZipPublicationToMavenLocal` and `publishPluginZipPublicationToStagingRepository` which is not required to be called with this plugin.
 To exclude add the following in `settings.gradle` file ```startParameter.excludedTaskNames=["publishPluginZipPublicationToMavenLocal", "publishPluginZipPublicationToStagingRepository"]```
 
-    Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exlcude these tasks, only required if it is calling publish tasks that targets `ALL` repos and `ALL` publications.
+    Note: If there is a managed `build.sh` file and do not have any publish tasks, then its not required to exclude these tasks, only required if it is calling publish tasks that targets `ALL` repos and `ALL` publications.
 
 8. Quick Example:
     Job-scheduler:
