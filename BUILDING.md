@@ -183,7 +183,7 @@ Use `./gradlew publishShadowPublicationToStagingRepository` to produce maven art
 * The maven coordinates `groupID`, `version` and `artifcatID` will be inferred from gradle project properties. (Prior to OpenSearch 2.4 the `groupId` was fixed as `org.openserach.plugin` regardless of actual gradle project `group` value or pluginZip publication POM customizations.)
 * User can also pass custom POM extensions, that will add desired properties to Apache Maven POM file generated during runtime.
 * Once the plugin is added to the `build.gradle` as `apply plugin: 'opensearch.pluginzip'`, this will add a new custom publish task `publishPluginZipPublicationToZipStagingRepository`, the purpose of this task is to publish the ZIP distribution to the Apache Maven local repository (file system).
-* Internally the plugin will apply both the '[nebula.maven-base-publish](https://plugins.gradle.org/plugin/nebula.maven-base-publish)' and '[maven-publish](https://docs.gradle.org/current/userguide/publishing_maven.html)' plugins which means that it is not necessary to explicitly apply these in your project. 
+* Since OpenSearch 2.4 this plugin internally applies both the '[nebula.maven-base-publish](https://plugins.gradle.org/plugin/nebula.maven-base-publish)' and '[maven-publish](https://docs.gradle.org/current/userguide/publishing_maven.html)' plugins which means that it is not necessary to explicitly apply these in your project. 
 * The Apache Maven local artifacts could then be published to Apache Maven central/nexus using [CI workflows](https://github.com/opensearch-project/opensearch-build/tree/main/jenkins).
 * The plugin will not publish generated JARs (`sourcesJar`, `javadocJar`), this is done on purpose to separate `jars` and `zip` publications.
 
