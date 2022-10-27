@@ -20,8 +20,6 @@
 
 ## Plugin Naming Conventions
 
-These are _recommended_ plugin naming conventions. YMMV.
-
 ### GitHub
 
 - Within the [opensearch-project org](https://github.com/opensearch-project), do not include the word `OpenSearch` or `OpenSearch Dashboards` in the repo name.
