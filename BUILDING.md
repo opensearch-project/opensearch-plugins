@@ -266,8 +266,8 @@ To exclude add the following in `settings.gradle` file ```startParameter.exclude
     [settings.gradle](https://github.com/opensearch-project/job-scheduler/blob/main/settings.gradle)
     [build.sh](https://github.com/opensearch-project/job-scheduler/blob/main/scripts/build.sh)
 
-## Updating documentation
+## Updating Documentation
 
-The available [OpenSearch plugins](https://opensearch.org/docs/latest/install-and-configure/install-opensearch/plugins/#available-plugins) and [Dashboards plugins](https://opensearch.org/docs/latest/install-and-configure/install-dashboards/plugins/#available-plugins) are listed on the documentation site. 
+The available [OpenSearch plugins](https://opensearch.org/docs/latest/install-and-configure/install-opensearch/plugins/#available-plugins) and [OpenSearch Dashboards plugins](https://opensearch.org/docs/latest/install-and-configure/install-dashboards/plugins/#available-plugins) are listed on the [documentation website](https://opensearch.org/docs/latest/). 
 
-If you create a new plugin or update the name of an existing one, make sure to update the list of plugins. You can either edit the [OpenSearch plugins doc page](https://github.com/opensearch-project/documentation-website/blob/main/_install-and-configure/install-opensearch/plugins.md) or [Dashboards plugins doc page](https://github.com/opensearch-project/documentation-website/blob/main/_install-and-configure/install-dashboards/plugins.md) in the documentation repo, or [open a documentation issue](https://github.com/opensearch-project/documentation-website/issues/new/choose).
+If you create a new plugin or update the name of an existing one, make sure to update the list of plugins. You can either edit the [OpenSearch plugins doc page](https://github.com/opensearch-project/documentation-website/blob/main/_install-and-configure/install-opensearch/plugins.md) or [OpenSearch Dashboards plugins doc page](https://github.com/opensearch-project/documentation-website/blob/main/_install-and-configure/install-dashboards/plugins.md) in the documentation repo, or [open a documentation issue](https://github.com/opensearch-project/documentation-website/issues/new/choose).
