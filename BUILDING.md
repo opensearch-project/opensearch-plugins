@@ -10,7 +10,7 @@
     - [opensearch.pluginzip](#opensearchpluginzip)
         - [Plugin Design](#plugin-design)
         - [Plugin Usage](#plugin-usage)
-- [Updating documentation](#updating-documentation)
+- [Updating Documentation](#updating-documentation)
 
 ## Developing Plugins for OpenSearch
 
