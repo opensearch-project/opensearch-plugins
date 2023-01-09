@@ -54,13 +54,13 @@ opensearchplugin {
 - Plugin ID is lowercase camelcase, e.g. `notebooksDashboards`.
 - Version follows [semver](https://semver.org/).
 
-For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.com/opensearch-project/dashboards-notebooks/blob/main/dashboards-notebooks/opensearch_dashboards.json).
+For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.com/opensearch-project/dashboards-notebooks/blob/1.0/dashboards-notebooks/opensearch_dashboards.json).
 
 ```json
 {
   "id": "notebooksDashboards",
-  "version": "1.0.0.0-beta1",
-  "opensearchDashboardsVersion": "1.0.0-beta1",
+  "version": "1.0.0.0",
+  "opensearchDashboardsVersion": "1.0.0",
   "server": true,
   "ui": true,
   "requiredPlugins": ["navigation", "embeddable", "dashboard"],
@@ -72,11 +72,11 @@ For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.co
 
 #### OpenSearch Plugins
 
-- Artifacts are of the `<package name>-<version>` format, e.g. `opensearch-job-scheduler-1.0.0.0-beta1.zip`.
+- Artifacts are of the `<package name>-<version>` format, e.g. `opensearch-job-scheduler-1.0.0.0.zip`.
 
 #### OpenSearch Dashboards Plugins
 
-- Artifacts are of the `<package name>-<version>` format, e.g. `notebooks-dashboards-1.0.0.0-beta1.zip`.
+- Artifacts are of the `<package name>-<version>` format, e.g. `notebooks-dashboards-1.0.0.0.zip`.
 
 ### Classes
 
