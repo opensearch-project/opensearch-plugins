@@ -76,7 +76,7 @@ See [lycheeverse/lychee-action](https://github.com/lycheeverse/lychee-action) fo
 CI Workflows should be setup to run and verify plugin unit, integration and backwards compatibility tests.
 Workflows should run on main and release branches including pull requests merging into them.
 
-_Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/main/.github/workflows/CI.yml). 
+_Example_: See CI Workflow in [anomaly-detection](https://github.com/opensearch-project/anomaly-detection/blob/1.0/.github/workflows/CI.yml). 
 
 ## Code Coverage Report
 
