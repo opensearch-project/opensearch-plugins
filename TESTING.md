@@ -12,6 +12,7 @@
     - [Codecov integration in Pull Requests](#codecov-integration-in-pull-requests)
   - [Backwards Compatibility Testing](#backwards-compatibility-testing)
     - [Types of BWC tests](#types-of-bwc-tests)
+    - [BWC tests on distribution bundle level](#bwc-tests-on-distribution-bundle-level)
     - [Hooking the BWC tests to CI](#hooking-the-bwc-tests-to-ci)
     - [BWC Version test matrix](#bwc-version-test-matrix)
   - [Gradle Plugins](#gradle-plugins)
