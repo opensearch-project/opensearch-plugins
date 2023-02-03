@@ -7,6 +7,8 @@
     - [Integration](#integration-1)
   - [Auto Create Documentation Issues](#auto-create-documentation-issues)
     - [Integration](#integration-2)
+  - [Auto Github Releases](#auto-github-releases)
+    - [Integration](#integration-3)
 
 # Workflows
 
@@ -68,3 +70,14 @@ When new features are introduced or changes are added that need to be documented
 1. Integrate the `opensearch-trigger-bot` in your repository, if not done already. This requires adding some GitHub secrets. See the [backport documentation](#managing-backports) for details.
 2. Add an issue template `.ci/documentation/issue.md` ([example](https://github.com/opensearch-project/OpenSearch/blob/main/.ci/documentation/issue.md)) to your repository. This markdown file defines the template that will be used to create issues in the documentation-website repo.
 3. Add a GitHub workflow `.github/workflows/create-documentation-issue.yml` ([example](https://github.com/opensearch-project/OpenSearch/blob/main/.github/workflows/create-documentation-issue.yml)) to your repository, this workflow gets triggered when a label `needs-documentation` is added to a pull request. It creates an issue with the title and issue template provided to the workflow.
+
+
+## Auto Github Releases
+
+OpenSearch project releases add a [github tag](https://docs.github.com/en/rest/git/tags) for each repo. This workflow enables automatically publishing a new [github release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) based on the tag.
+
+### Integration
+
+1. Setup release notes directory with the repo, see OpenSearch [example](https://github.com/opensearch-project/OpenSearch/tree/main/release-notes). This workflow is dependent on predictable release notes based on a release tag.
+2. Setup the workflow in your repo similar to [auto-release.yml](https://github.com/opensearch-project/OpenSearch/blob/main/.github/workflows/auto-release.yml) in OpenSearch.
+3. Backport this workflow to all release branches i.e 2.x, 1.x etc.
