@@ -30,7 +30,7 @@
 
 #### OpenSearch Dashboard Plugins
 
-- Prefix OpenSearch Dashboards plugins with `dashboards-`, e.g. [dashboards-reports](https://github.com/opensearch-project/dashboards-reports).
+- Prefix OpenSearch Dashboards plugins repo name with `dashboards-`, e.g. [dashboards-observability](https://github.com/opensearch-project/dashboards-observability).
 
 ### Metadata
 
@@ -39,7 +39,7 @@
 - Plugin name starts with `opensearch-`.
 - Include `opensearch-` in the plugin name.
 - Description does not end with a period.
-- Include `OpenSearch` and `plugin` in the descripion. 
+- Include `OpenSearch` and `plugin` in the description.
 
 ```groovy
 opensearchplugin {
@@ -51,20 +51,20 @@ opensearchplugin {
 
 #### OpenSearch Dashboard Plugins
 
-- Plugin ID is lowercase camelcase, e.g. `notebooksDashboards`.
+- Plugin ID is lowercase camelCase, e.g. `observabilityDashboards`.
+- Package `name` in `package.json` is kebab-case, e.g. [observability-dashboards](https://github.com/opensearch-project/dashboards-observability/blob/2.5/package.json)
 - Version follows [semver](https://semver.org/).
 
-For example, [dashboards-notebooks/opensearch_dashboards.json](https://github.com/opensearch-project/dashboards-notebooks/blob/1.0/dashboards-notebooks/opensearch_dashboards.json).
+For example, [dashboards-observability/opensearch_dashboards.json](https://github.com/opensearch-project/dashboards-observability/blob/2.5/opensearch_dashboards.json).
 
 ```json
 {
-  "id": "notebooksDashboards",
-  "version": "1.0.0.0",
-  "opensearchDashboardsVersion": "1.0.0",
+  "id": "observabilityDashboards",
+  "version": "2.5.0.0",
+  "opensearchDashboardsVersion": "2.5.0",
   "server": true,
   "ui": true,
-  "requiredPlugins": ["navigation", "embeddable", "dashboard"],
-  "optionalPlugins": []
+  "requiredPlugins": []
 }
 ```
 
