@@ -1,14 +1,16 @@
 {
   "projects": {
-    "queryWorkbenchDashboards": "git@github.com:opensearch-project/sql.git",
+    "queryWorkbenchDashboards": "git@github.com:opensearch-project/dashboards-query-workbench.git",
     "alertingDashboards": "git@github.com:opensearch-project/alerting-dashboards-plugin.git",
-    "notificationsDashboards": "git@github.com:opensearch-project/notifications.git",
+    "notificationsDashboards": "git@github.com:opensearch-project/dashboards-notifications.git",
     "securityDashboards": "git@github.com:opensearch-project/security-dashboards-plugin",
     "indexManagementDashboards": "git@github.com:opensearch-project/index-management-dashboards-plugin.git",
     "anomalyDetectionDashboards": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
     "reportsDashboards": "git@github.com:opensearch-project/dashboards-reports.git",
-    "observabilityDashboards": "git@github.com:opensearch-project/observability.git",
+    "observabilityDashboards": "git@github.com:opensearch-project/dashboards-observability.git",
     "ganttChartDashboards": "git@github.com:opensearch-project/dashboards-visualizations.git",
-    "customImportMapDashboards": "git@github.com:opensearch-project/dashboards-maps.git"
+    "customImportMapDashboards": "git@github.com:opensearch-project/dashboards-maps.git",
+    "searchRelevanceDashboards": "git@github.com:opensearch-project/dashboards-search-relevance.git",
+    "opensearch-dashboards-functional-test": "git@github.com:opensearch-project/opensearch-dashboards-functional-test.git"
   }
 }
