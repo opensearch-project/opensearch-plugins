@@ -4,7 +4,7 @@
     "anomaly-detection": "git@github.com:opensearch-project/anomaly-detection.git",
     "asynchronous-search": "git@github.com:opensearch-project/asynchronous-search.git",
     "common-utils": "git@github.com:opensearch-project/common-utils.git",
-    "dashboards-reports": "git@github.com:opensearch-project/dashboards-reports.git",
+    "opensearch-reports": "git@github.com:opensearch-project/reporting.git",
     "index-management": "git@github.com:opensearch-project/index-management.git",
     "job-scheduler": "git@github.com:opensearch-project/job-scheduler.git",
     "k-nn": "git@github.com:opensearch-project/k-nn.git",
@@ -16,6 +16,9 @@
     "cross-cluster-replication": "git@github.com:opensearch-project/cross-cluster-replication.git",
     "ml-commons": "git@github.com:opensearch-project/ml-commons.git",
     "geospatial": "git@github.com:opensearch-project/geospatial.git",
+    "notifications": "git@github.com:opensearch-project/notifications.git",
+    "neural-search": "git@github.com:opensearch-project/neural-search.git",
+    "security-analytics": "git@github.com:opensearch-project/security-analytics.git",
     "oci-object-storage": "git@github.com:opensearch-project/opensearch-oci-object-storage.git"
   }
 }

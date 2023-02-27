@@ -6,9 +6,12 @@
     "securityDashboards": "git@github.com:opensearch-project/security-dashboards-plugin",
     "indexManagementDashboards": "git@github.com:opensearch-project/index-management-dashboards-plugin.git",
     "anomalyDetectionDashboards": "git@github.com:opensearch-project/anomaly-detection-dashboards-plugin.git",
-    "reportsDashboards": "git@github.com:opensearch-project/dashboards-reports.git",
-    "observabilityDashboards": "git@github.com:opensearch-project/observability.git",
+    "reportsDashboards": "git@github.com:opensearch-project/dashboards-reporting.git",
+    "observabilityDashboards": "git@github.com:opensearch-project/dashboards-observability.git",
     "ganttChartDashboards": "git@github.com:opensearch-project/dashboards-visualizations.git",
-    "customImportMapDashboards": "git@github.com:opensearch-project/dashboards-maps.git"
+    "searchRelevanceDashboards": "git@github.com:opensearch-project/dashboards-search-relevance.git",
+    "customImportMapDashboards": "git@github.com:opensearch-project/dashboards-maps.git",
+    "securityAnalyticsDashboards": "git@github.com:opensearch-project/security-analytics-dashboards-plugin.git",
+    "mlCommonsDashboards": "git@github.com:opensearch-project/ml-commons-dashboards.git"
   }
 }

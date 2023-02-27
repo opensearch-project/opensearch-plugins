@@ -15,5 +15,8 @@
 /observability/
 /cross-cluster-replication/
 /ml-commons/
-/geospatial/
 /opensearch-oci-object-storage/
+/neural-search/
+/geospatial/
+/notifications/
+/security-analytics/
