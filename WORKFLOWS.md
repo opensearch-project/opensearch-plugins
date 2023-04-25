@@ -9,6 +9,9 @@
     - [Integration](#integration-2)
   - [Auto Github Releases](#auto-github-releases)
     - [Integration](#integration-3)
+  - [Publishing Java Plugins Snapshots](#publishing-java-plugins-snapshots)
+    - [Configuration](#configuration)
+    - [Testing](#testing)
 
 # Workflows
 
@@ -81,3 +84,70 @@ OpenSearch project releases add a [github tag](https://docs.github.com/en/rest/g
 1. Setup release notes directory with the repo, see OpenSearch [example](https://github.com/opensearch-project/OpenSearch/tree/main/release-notes). This workflow is dependent on predictable release notes based on a release tag.
 2. Setup the workflow in your repo similar to [auto-release.yml](https://github.com/opensearch-project/OpenSearch/blob/main/.github/workflows/auto-release.yml) in OpenSearch.
 3. Backport this workflow to all release branches i.e 2.x, 1.x etc.
+
+## Publishing Java Plugins Snapshots
+
+OpenSearch project uses GitHub Actions to publish snapshots to [Maven](https://aws.oss.sonatype.org/content/repositories/snapshots/). 
+
+### Configuration
+In order to onboard, follow the below steps:
+1. Determine what artifacts you publish to maven. Most plugins publish only zips. [Example](https://aws.oss.sonatype.org/content/repositories/snapshots/org/opensearch/plugin/opensearch-security/3.0.0.0-SNAPSHOT/).
+2. Add the below configuration under `publishing` section of build.gradle:
+```
+    repositories {
+        maven {
+            name = "Snapshots"
+            url = "https://aws.oss.sonatype.org/content/repositories/snapshots"
+            credentials {
+                username "$System.env.SONATYPE_USERNAME"
+                password "$System.env.SONATYPE_PASSWORD"
+            }
+        }
+    }
+```
+3. Determine what gradle task will publish the content to snapshots repo. Example: ./gradlew publishPluginZipPublicationToSnapshotsRepository.
+4. Create a pull request to set up a GitHub Action workflow that will fetch the credentials and publish the snapshots to https://aws.oss.sonatype.org/ See [sample workflow](https://github.com/opensearch-project/security/blob/main/.github/workflows/maven-publish.yml).
+5. Add @opensearch-project/engineering-effectiveness as a reviewer, who will also take care of creating the IAM role that is required to fetch the credentials and add it to the GitHub Secrets.
+
+### Testing 
+In order to test the maven snapshot publication, update the Snapshots target repository URL from maven to a local file system path in your build.gradle file.
+
+```
+  maven {
+      name = "Snapshots" //  optional target repository name
+      url = "snapshots"
+  }
+  
+```
+Run the command `./gradlew <taskName>` which will publish the files to the local file system under the 'snapshots' folder, then scan with `tree` or your favor directory scanner to see the content along with sha and md5 files.
+
+Example:
+```
+tree snapshots
+snapshots
+└── org
+    └── opensearch
+        └── plugin
+            └── opensearch-security
+                ├── 2.7.0.0-SNAPSHOT
+                │   ├── maven-metadata.xml
+                │   ├── maven-metadata.xml.md5
+                │   ├── maven-metadata.xml.sha1
+                │   ├── maven-metadata.xml.sha256
+                │   ├── maven-metadata.xml.sha512
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.pom
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.pom.md5
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.pom.sha1
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.pom.sha256
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.pom.sha512
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.zip
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.zip.md5
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.zip.sha1
+                │   ├── opensearch-security-2.7.0.0-20230424.235359-1.zip.sha256
+                │   └── opensearch-security-2.7.0.0-20230424.235359-1.zip.sha512
+                ├── maven-metadata.xml
+                ├── maven-metadata.xml.md5
+                ├── maven-metadata.xml.sha1
+                ├── maven-metadata.xml.sha256
+                └── maven-metadata.xml.sha512
+```
