@@ -24,7 +24,7 @@
 
 ## Managing OpenSearch Plugins
 
-We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch and OpenSearch Dashoards plugins as a set. There are three sets: [all plugins](.meta), [OpenSearch Plugins](plugins/.meta) and [OpenSearch Dashboards Plugins](dashboards-plugins/.meta). If you need a meta project for all components included in OpenSearch, see [project-meta](https://github.com/opensearch-project/project-meta).
+We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch and OpenSearch Dashoards plugins as a set. There are two sets: [OpenSearch Plugins](plugins/.meta) and [OpenSearch Dashboards Plugins](dashboards-plugins/.meta). If you need a meta project for all the repositories in the (opensearch-project organization](https://github.com/opensearch-project/), see [project-meta](https://github.com/opensearch-project/project-meta).
 
 ### Install GH
 
