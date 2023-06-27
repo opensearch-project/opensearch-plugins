@@ -13,7 +13,7 @@ All files in opensearch-project should use [OpenSearch SPDX license](https://git
 
 
 If files have any existing headers keep them and add OpenSearch SPDX license header on top.  
-_Example_: [Version.java](https://github.com/opensearch-project/OpenSearch/blob/main/server/src/main/java/org/opensearch/Version.java) file has license header from Elasticsearch.
+_Example_: [Version.java](https://github.com/opensearch-project/OpenSearch/blob/main/buildSrc/src/main/java/org/opensearch/gradle/Version.java) file has license header from Elasticsearch.
  The existing license is not removed and OpenSearch SPDX license header is added on top of it.   
 
 ### Automated License Headers' Checks
