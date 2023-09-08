@@ -28,7 +28,7 @@ We use [meta](https://github.com/mateodelnorte/meta) to manage OpenSearch and Op
 
 ### Install GH
 
-Install and configure GitHub CLI from [cli.github.com/manual/installation](https://cli.github.com/manual/installation). Authenticate with `gh auth login` and ensure that it works, e.g. `gh issue list`.
+Install and configure GitHub CLI from [https://cli.github.com/manual/](https://cli.github.com/manual/). Authenticate with `gh auth login` and ensure that it works, e.g. `gh issue list`.
 
 ### Install Meta
 
