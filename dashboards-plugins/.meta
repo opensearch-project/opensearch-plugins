@@ -12,6 +12,7 @@
     "searchRelevanceDashboards": "git@github.com:opensearch-project/dashboards-search-relevance.git",
     "customImportMapDashboards": "git@github.com:opensearch-project/dashboards-maps.git",
     "securityAnalyticsDashboards": "git@github.com:opensearch-project/security-analytics-dashboards-plugin.git",
-    "mlCommonsDashboards": "git@github.com:opensearch-project/ml-commons-dashboards.git"
+    "mlCommonsDashboards": "git@github.com:opensearch-project/ml-commons-dashboards.git",
+    "assistantDashboards": "git@github.com:opensearch-project/dashboards-assistant.git"
   }
 }
