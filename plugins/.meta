@@ -20,6 +20,7 @@
     "neural-search": "git@github.com:opensearch-project/neural-search.git",
     "security-analytics": "git@github.com:opensearch-project/security-analytics.git",
     "custom-codecs": "git@github.com:opensearch-project/custom-codecs.git",
-    "oci-object-storage": "git@github.com:opensearch-project/opensearch-oci-object-storage.git"
+    "oci-object-storage": "git@github.com:opensearch-project/opensearch-oci-object-storage.git",
+    "flow-framework": "git@github.com:opensearch-project/flow-framework.git"
   }
 }
