@@ -92,6 +92,9 @@ For example, [dashboards-observability/opensearch_dashboards.json](https://githu
 ### APIs
 
 - Use `_` as prefix for APIs, e.g. `_plugins/_anomaly_detection/*`.
+- Use snake case when naming API request/response fields and parameters (for example, `use_case`), separating individual words with an underscore.
+- Replace hyphens with underscores (for example, for retrieval-augmented generation, use `retrieval_augmented_generation`).
+- When creating a new type of a component, take note of how other components of this type are named. For example, search processors are named omitting the word `processor` at the end (the collapse processor is called `collapse`).
 
 ### Indices
 
