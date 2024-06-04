@@ -19,7 +19,7 @@
 
 - Most plugins should start in a repository outside of the OpenSearch project. This allows for rapid iteration during initial development without the overhead of being an official part of the project.
 - Plugins can be later ported into the OpenSearch Project on a case-by-case basis. A formal path for this process is yet to be created.
-- Do not add new plugins to the [plugins folder](https://github.com/opensearch-project/OpenSearch/tree/main/plugins) within the project. This folder is within the core project, where the maintainers are not focussed on optional pluggable features. If you think it should be there anyway, please explain why in the RFC stage. In any case, it is recommended to start outside the project.   
+- Do not add new plugins to the [plugins folder](https://github.com/opensearch-project/OpenSearch/tree/main/plugins) within the core OpenSearch repository. The maintainers likely do not have domain expertise in your new optional plugin. If you think it should be there anyway, please explain why in the RFC stage. In any case, it is recommended to start outside the project.   
 
 ## Plugin Naming Conventions
 
