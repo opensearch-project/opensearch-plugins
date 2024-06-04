@@ -1,3 +1,4 @@
+- [Plugin Location](#plugin-location)
 - [Plugin Naming Conventions](#plugin-naming-conventions)
   - [GitHub](#github)
     - [OpenSearch Plugins](#opensearch-plugins)
