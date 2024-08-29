@@ -21,6 +21,7 @@
     "security-analytics": "git@github.com:opensearch-project/security-analytics.git",
     "security": "git@github.com:opensearch-project/security.git",
     "skills": "git@github.com:opensearch-project/skills.git",
-    "sql": "git@github.com:opensearch-project/sql.git"
+    "sql": "git@github.com:opensearch-project/sql.git",
+    "opensearch-system-templates": "git@github.com:opensearch-project/opensearch-system-templates.git"
   }
 }
