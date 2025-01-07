@@ -22,6 +22,7 @@
     "security": "git@github.com:opensearch-project/security.git",
     "skills": "git@github.com:opensearch-project/skills.git",
     "sql": "git@github.com:opensearch-project/sql.git",
-    "opensearch-system-templates": "git@github.com:opensearch-project/opensearch-system-templates.git"
+    "opensearch-system-templates": "git@github.com:opensearch-project/opensearch-system-templates.git",
+    "opensearch-remote-metadata-sdk": "git@github.com:opensearch-project/opensearch-remote-metadata-sdk.git"
   }
 }
