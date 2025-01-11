@@ -23,6 +23,7 @@
     "skills": "git@github.com:opensearch-project/skills.git",
     "sql": "git@github.com:opensearch-project/sql.git",
     "opensearch-system-templates": "git@github.com:opensearch-project/opensearch-system-templates.git",
-    "opensearch-remote-metadata-sdk": "git@github.com:opensearch-project/opensearch-remote-metadata-sdk.git"
+    "opensearch-remote-metadata-sdk": "git@github.com:opensearch-project/opensearch-remote-metadata-sdk.git",
+    "opensearch-learning-to-rank-base": "git@github.com:opensearch-project/opensearch-learning-to-rank-base.git"
   }
 }
