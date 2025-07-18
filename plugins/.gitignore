@@ -24,3 +24,5 @@
 /opensearch-remote-metadata-sdk/
 /opensearch-learning-to-rank-base/
 /query-insights/
+/dashboards-investigation/
+/opensearch-prometheus-exporter/
