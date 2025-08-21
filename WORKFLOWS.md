@@ -99,8 +99,8 @@ In order to onboard, follow the below steps:
             name = "Snapshots"
             url = "https://aws.oss.sonatype.org/content/repositories/snapshots"
             credentials {
-                username "$System.env.SONATYPE_USERNAME"
-                password "$System.env.SONATYPE_PASSWORD"
+                username System.getenv("SONATYPE_USERNAME")
+                password System.getenv("SONATYPE_PASSWORD")
             }
         }
     }
