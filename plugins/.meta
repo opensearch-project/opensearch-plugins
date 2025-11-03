@@ -26,7 +26,7 @@
     "opensearch-remote-metadata-sdk": "git@github.com:opensearch-project/opensearch-remote-metadata-sdk.git",
     "opensearch-learning-to-rank-base": "git@github.com:opensearch-project/opensearch-learning-to-rank-base.git",
     "query-insights": "git@github.com:opensearch-project/query-insights.git",
-    "user-behavior-insights": "git@github.com:opensearch-project/user-behavior-insights.git",
-    "search-relevance": "git@github.com:opensearch-project/search-relevance.git"
+    "search-relevance": "git@github.com:opensearch-project/search-relevance.git",
+    "user-behavior-insights": "git@github.com:opensearch-project/user-behavior-insights.git"
   }
 }

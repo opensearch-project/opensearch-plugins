@@ -6,8 +6,13 @@ This document contains a list of maintainers in this repo. See [opensearch-proje
 
 | Maintainer         | GitHub ID                                               | Affiliation |
 | ------------------ | ------------------------------------------------------- | ----------- |
-| Daniel Doubrovkine | [dblock](https://github.com/dblock)                     | Independent |
 | Sarat Vemulapalli  | [saratvemulapalli](https://github.com/saratvemulapalli) | Amazon      |
-| Tianli Feng        | [tlfeng](https://github.com/tlfeng)                     | Amazon      |
 | Tyler Ohlsen       | [ohltyler](https://github.com/ohltyler)                 | Amazon      |
 | Vacha Shah         | [VachaShah](https://github.com/vachashah)               | Amazon      |
+
+## Emeritus
+
+| Maintainer         | GitHub ID                                               | Affiliation |
+| ------------------ | ------------------------------------------------------- | ----------- |
+| Daniel Doubrovkine | [dblock](https://github.com/dblock)                     | Independent |
+| Tianli Feng        | [tlfeng](https://github.com/tlfeng)                     | Amazon      |
