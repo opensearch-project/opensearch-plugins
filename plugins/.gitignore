@@ -23,3 +23,6 @@
 /opensearch-system-templates/
 /opensearch-remote-metadata-sdk/
 /opensearch-learning-to-rank-base/
+/query-insights/
+/user-behavior-insights/
+/search-relevance/
