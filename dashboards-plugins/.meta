@@ -15,6 +15,7 @@
     "mlCommonsDashboards": "git@github.com:opensearch-project/ml-commons-dashboards.git",
     "assistantDashboards": "git@github.com:opensearch-project/dashboards-assistant.git",
     "flowFrameworkDashboards": "git@github.com:opensearch-project/dashboards-flow-framework.git",
-    "queryInsightsDashboards": "git@github.com:opensearch-project/query-insights-dashboards.git"
+    "queryInsightsDashboards": "git@github.com:opensearch-project/query-insights-dashboards.git",
+    "investigationDashboards": "git@github.com:opensearch-project/dashboards-investigation.git"
   }
 }
