@@ -29,6 +29,7 @@
     "search-relevance": "git@github.com:opensearch-project/search-relevance.git",
     "dashboards-investigation": "git@github.com:opensearch-project/dashboards-investigation.git",
     "opensearch-prometheus-exporter": "git@github.com:opensearch-project/opensearch-prometheus-exporter",
-    "user-behavior-insights": "git@github.com:opensearch-project/user-behavior-insights.git"
+    "user-behavior-insights": "git@github.com:opensearch-project/user-behavior-insights.git",
+    "agent-trace-eval-scheduler": git@github.com:opensearch-project/agent-trace-eval-scheduler.git
   }
 }
