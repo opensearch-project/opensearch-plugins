@@ -24,4 +24,5 @@
 /geospatial/
 /opensearch-oci-object-storage/
 /search-relevance/
+/agent-trace-eval-scheduler/
 .DS_Store
